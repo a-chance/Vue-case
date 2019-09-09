@@ -1,0 +1,298 @@
+#main {
+    .content {
+        width: 1190px;
+        margin: 0 auto;
+
+        .tablist-wrap {
+            height: 70px;
+            background-color: #239cdc;
+
+            .tablist {
+                padding-top: 10px;
+                padding-left: 57px;
+
+                li {
+                    float: left;
+
+                    a {
+                        display: block;
+                        width: 204px;
+                        height: 60px;
+                        line-height: 60px;
+                        color: #676767;
+                        font-size: 18px;
+                        text-align: center;
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+
+                li.active {
+                    a {
+                        background-color: #f7f7f7;
+                        color: #676767;
+                    }
+                }
+            }
+
+            .already-reg {
+                margin-left: 190px;
+                margin-top: 30px;
+                color: #ffffff;
+                font-size: 14px;
+
+                a {
+                    color: #002d45;
+                    text-decoration: none;
+                    margin-left: 5px;
+                }
+            }
+
+
+        }
+
+        .content-bot {
+            width: 100%;
+            min-height: 515px;
+            background: url(../img/regist_nv_line_bg.jpg) repeat-y center top;
+
+            .conbot-left {
+                width: 862px;
+                height: 100%;
+                padding-top: 25px;
+                box-sizing: border-box;
+
+                .register-item {
+                    position: relative;
+                    width: 760px;
+                    margin: 0 auto;
+                    border-bottom: 1px dotted #666666;
+                    padding-bottom: 12px;
+
+                    h3 {
+                        color: #3c3c3c;
+                        font-size: 30px;
+                        margin-left: 215px;
+                        font-weight: normal;
+
+                        img {
+                            display: inline-block;
+                            width: 30px;
+                            height: 40px;
+                            vertical-align: -10px;
+                        }
+
+                        span {
+                            font-size: 16px;
+                        }
+                    }
+
+                    a {
+                        position: absolute;
+                        right: 0;
+                        top: 20px;
+                        padding-left: 20px;
+                        background: url(../img/regist_ml_icon.jpg) no-repeat left 3px;
+                    }
+                }
+
+                .register-item-form {
+                    padding-left: 125px;
+                    padding-top: 60px;
+
+                    .register-row {
+                        padding: 5px 0;
+
+                        .label {
+                            float: left;
+                            display: block;
+                            width: 110px;
+                            padding-right: 10px;
+                            height: 35px;
+                            line-height: 35px;
+                            text-align: right;
+                            color: #2f313a;
+                            font-size: 14px;
+
+                            em {
+                                display: inline-block;
+                                height: 35px;
+                                line-height: 35px;
+                                color: #239cdc;
+                                vertical-align: -4px;
+                            }
+                        }
+
+                        .field {
+                            float: left;
+
+                            input {
+                                height: 20px;
+                                line-height: 20px;
+                                width: 258px;
+                                padding: 6px 30px 7px 10px;
+                                border: 1px solid #c9c8cf;
+                                color: rgb(153, 153, 153);
+                                font-size: 16px;
+                            }
+
+                            input.yzm-inp {
+                                float: left;
+                                width: 138px;
+                            }
+
+                            .get-yzm {
+                                float: left;
+                                width: 110px;
+                                height: 35px;
+                                padding: 0;
+                                background: url(../img/regist_val_btn.jpg) no-repeat;
+                                color: #353535;
+                                cursor: pointer;
+                                margin-left: 10px;
+                                font-size: 12px;
+                                border: none;
+                                text-align: center;
+                                line-height: 35px;
+                            }
+                        }
+
+                        .tips {
+                            display: none;
+                            float: left;
+                            margin-left: 10px;
+                            padding: 0px 5px 0px 5px;
+                            background: #fff4f5;
+                            border: #f0b8be 1px solid;
+                            width: 170px;
+                            height: 33px;
+                        }
+
+                        .codeyz {
+                            display: none;
+                            float: left;
+                            margin-left: 10px;
+                            padding: 0px 5px 0px 5px;
+                            background: #fff4f5;
+                            border: #f0b8be 1px solid;
+                            width: 170px;
+                            height: 33px;
+                        }
+                    }
+
+                    .highlight {
+                        margin-left: 120px;
+
+                        span {
+                            display: block;
+                            width: 248px;
+                            background: #f2ffea;
+                            border: #90c472 1px solid;
+                            padding: 10px;
+                            line-height: 150%;
+                            color: #56575a;
+
+                            em {
+                                color: #85cc64;
+                                font-style: normal;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+
+                    .pwd-storage {
+                        position: relative;
+                        width: 180px;
+                        height: 32px;
+                        margin: 5px;
+                        margin-left: 118px;
+
+                        .pwd-bar {
+                            background: url(../img/img_pwd_1.png) no-repeat;
+                            overflow: hidden;
+                            width: 179px;
+                            height: 14px;
+                        }
+
+                        .pwd-bar-on {
+                            // display: none;
+                            position: absolute;
+                            background: url(../img/img_pwd_2.png) no-repeat;
+                            top: 0px;
+                            height: 14px;
+                            overflow: hidden;
+                            width: 0;
+                            height: 14px;
+                        }
+
+                        .pwd-txt {
+                            padding-top: 2px;
+                            width: 180px;
+                            overflow: hidden;
+
+                            span {
+                                color: #707070;
+                                float: left;
+                                font-size: 12px;
+                                text-align: center;
+                                width: 58px;
+                            }
+                        }
+                    }
+
+                    .agree-clause {
+                        padding: 5px 0;
+
+                        .field {
+                            font-size: 13px;
+                            color: #666;
+
+                            input {
+                                width: 12px;
+                                height: 12px;
+                            }
+
+                            a {
+                                color: #3333ff;
+                            }
+                        }
+                    }
+
+                    .submit {
+                        margin-left: 120px;
+                        margin-top: 6px;
+
+                        input {
+                            background: url(../img/regist_submit_btn.jpg);
+                            width: 300px;
+                            height: 35px;
+                            border: 0 none;
+                        }
+                    }
+                }
+            }
+
+            // 右侧
+            .conbot-rig {
+                width: 328px;
+                height: 100%;
+                padding-top: 20px;
+
+                .txt-info {
+                    text-align: center;
+                    color: #0e4971;
+                    font-size: 14px;
+                    margin: 10px 0;
+                }
+
+                .txt-info2 {
+                    margin-bottom: 35px;
+                }
+
+                img {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
