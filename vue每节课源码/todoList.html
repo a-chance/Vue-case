@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todoList</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #app{
+            width:1024px;
+            margin:auto;
+        }
+        .on{
+            color:#ccc;
+            text-decoration: line-through;
+        }
+        .heaven{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3>今天还有{{num}}件事未做</h3>
+            <input type="text" v-model="title" @keyup.13="add">
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item" @dblclick='update(index)' v-for="(todo,index) in filterTodos">
+                    <div v-show="!todo.isDouble" class="heaven">
+                        <input type="checkbox" v-model="todo.isSelected">
+                        <label :class="{on:todo.isSelected}">{{todo.thing}}</label>
+                    </div>
+                    <input type="text"
+                           v-show="todo.isDouble"
+                           v-model="todo.thing"
+                           @blur="blur(index)"
+                           @keyup.13="blur(index)"
+                           v-focus>
+                    <button @click='remove(index)' class="btn btn-xs pull-right btn-danger glyphicon glyphicon-remove-circle"></button>
+                </li>
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <ul class="nav nav-pills">
+                <li role="presentation" :class="{active:hash==='#all'}"><a href="#all">所有任务</a></li>
+                <li role="presentation" :class="{active:hash==='#finish'}"><a href="#finish">已完成</a></li>
+                <li role="presentation" :class="{active:hash==='#unfinish'}"><a href="#unfinish">未完成</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            title:'',           //储存文本框中的数据
+            hash:'#all',            //储存hash值
+            todos:[
+                {
+                    isSelected:false,
+                    thing:'吃饭',
+                    isDouble:false,
+                },
+                {
+                    isSelected:false,
+                    thing:'散步',
+                    isDouble:false,
+                },
+            ]
+        },
+        watch:{
+            todos:{
+                handler(){  //在本地保存了数据
+                    localStorage.setItem('todos',JSON.stringify(this.todos))
+                },
+                deep:true,          //深度监视todos
+            }
+        },
+        methods:{
+            add(){
+                this.todos.push({
+                    isSelected:false,
+                    thing:this.title,
+                    isDouble:false
+                });
+                this.title = ''
+            },
+            remove(index){
+                this.todos.splice(index,1)
+            },
+            update(index){
+                this.todos[index].isDouble = !this.todos[index].isDouble
+            },
+            blur(index){
+                this.todos[index].isDouble=false;
+            }
+        },
+        computed:{
+            num(){
+                return this.todos.filter(todo=>!todo.isSelected).length
+            },
+            filterTodos(){
+                if(this.hash==='#unfinish')return this.todos.filter(todo=>!todo.isSelected)
+                if(this.hash==='#finish') return this.todos.filter(todo=>todo.isSelected)
+                return this.todos
+            }
+        },
+        directives:{    //该选项存放的是自定义指令
+            focus(el){
+                //让元素获取焦点
+                el.focus()
+               //el.style.backgroundColor='#'+Math.random().toString(16).slice(2,8)
+            }
+        },
+        created(){
+            this.todos = JSON.parse(localStorage.getItem('todos'))||[]
+            //监听hash值的变化
+            window.addEventListener('hashchange',()=>{
+                this.hash = window.location.hash;
+            })
+        }
+    })
+
+
+    /*
+    *   自定义指令
+    *
+    *
+    * */
+</script>
+</body>
+</html>

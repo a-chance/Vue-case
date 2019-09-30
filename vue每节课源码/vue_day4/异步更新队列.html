@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div id="app">
+    <p id='op' @click="fn">{{text}}</p>
+    <!--{{b}}-->
+    <!--{{c}}-->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            text:'原来的文字',
+            a:1,
+            arr:[
+                {name:'heaven',age:28}
+            ]
+        },
+        watch:{
+            text(){    //在data的a属性变化时触发
+                console.log('data  中的text被修改了  我观察到了')
+            },
+            // text:{
+            //     handler(){
+            //         console.log('data  中的arr被修改了  我观察到了')
+            //     },
+            // },
+            // b(){
+            //     console.log('computed  中的b被修改了  我观察到了');
+            // }
+            // arr(){
+            //     console.log('data  中的arr被修改了  我观察到了')
+            // },
+
+            arr:{
+               handler(){
+                   console.log('data  中的arr被修改了  我观察到了')
+               },
+                deep:true,
+            }
+        },
+        computed:{
+            // b(){
+            //     return 1
+            // },
+            // b:{
+            //     get(){
+            //         return 1
+            //     },
+            //     set(){
+            //         console.log('b被修改了');
+            //     }
+            // }
+            // c(){
+            //     return 2
+            // }
+        },
+        methods:{
+            fn(){
+                // this.text = '更新后的文字';   //修改data中的数据
+                // this.b = 2;
+
+                //this.arr.push({name:'海文'})
+                //this.arr[0].name = '海文'
+
+                // this.arr.length = 2
+                //
+                // this.arr[0] = 2
+                // this.$nextTick(()=>{    //当视图更新完成后 回调函数触发
+                //     console.log(op.innerText);
+                //
+                // })
+
+
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

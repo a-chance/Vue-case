@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app" v-cloak>
+
+    <!--<p v-text="text"></p>-->
+
+    <!--<p v-once>{{a}}</p>-->
+    <p  v-on:click.once="fn">{{a}}</p>
+    <p @mouseenter=fn>{{arr}}</p>
+    <!--<p v-if="a>2" >v-if</p>-->
+    <!--<p v-else-if="a==2">v-else-if</p>-->
+    <!--<p v-else>v-else</p>-->
+
+
+    <!--<p v-show="isShow">v-show</p>-->
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            a:1,
+            text:'<span>我是一波段落</span>',
+            isShow:false,
+            arr:[1,2,3]
+        },
+        methods:{   //放置函数
+            fn(){
+                console.log(1)
+            }
+        }
+
+    })
+
+
+
+    /*
+    *   {{数据}}  在{{}}中可以插入vue提供的数据  不能把标签格式的字符串解析成标签
+    *
+    *   v-html   类似于innerHTML   把数据解析成对应的标签格式
+    *   v-text   类似于innerText
+    *
+    *   v-if=数据
+    *       如果数据为真  则渲染该节点
+    *       如果数据为假  则不渲染该节点
+    *   V-if  v-else-if vl-else  如果一起出现，必须是相邻兄弟
+    *   v-show=数据
+    *       如果数据为真  则显示该节点
+    *       如果数据为假  则不显示该节点
+    *
+    *   v-once  限制响应式数据的次数
+    *
+    *   v-on:click=回调函数     为元素绑定一个点击事件
+    *   v-on:click.once=回调函数     为元素绑定一个一次性的点击事件
+    *
+    * */
+
+</script>
+
+
+</body>
+</html>

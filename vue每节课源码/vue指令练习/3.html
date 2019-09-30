@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例3</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg">
+    <ul>
+        <li v-for="(user,index) in filterUsers">
+            {{index}}--{{user.name}}--{{user.age}}
+        </li>
+    </ul>
+    <button @click="sortByAge(0)">年龄升序</button>
+    <button @click="sortByAge(1)">年龄降序</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'',
+            users: [
+                {name: 'Danny', age:25},
+                {name: 'Jack', age:27},
+                {name: 'Mack', age:26},
+                {name: 'Mary', age:29}
+            ]
+        },
+        methods:{
+            // fn(){
+            //     this.users = this.users.filter((user)=>{
+            //         return user.name.includes(this.msg)
+            //     })
+            // }
+            sortByAge(num){
+                this.users.sort((a,b)=>{
+                    if(num){
+                        return b.age-a.age;         //年龄降序
+                    }else{
+                        return a.age-b.age;         //年龄升序
+                    }
+                })
+            }
+        },
+
+        computed:{
+            filterUsers(){
+                return this.users.filter((user)=>{
+                    return user.name.includes(this.msg)
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>
