@@ -1,0 +1,28 @@
+﻿
+* 自定义滚动条
+
+    * 
+
+* 自定义弹窗
+
+
+* 修改数据（实现）
+
+* 删除数据（实现）
+
+* 添加数据（实现）
+
+    * 添加用户成功以后总是显示最新添加的那一条
+
+问题：
+    * 用户管理主页面中鼠标移入checkbox不会触发td的移入事件，如何解决？
+
+    * 获取ifame中的节点？
+        解决：document.getElementById('iframe的ID').contentWindow.document.getElementById('元素的ID')
+
+    * 分页中demo7里面的节点是从哪里来的？
+
+    * 分页时render函数中的jump的方法中的page和limit如何获取？
+
+    * 分页时count如何获取？
+        解决：在执行use函数之前获取到count,也就是调用一次ajax请求，将success函数中的arr.length返回出去，这样就拿到了数据库中数据的总数，然后就可以作为render函数中count的键值

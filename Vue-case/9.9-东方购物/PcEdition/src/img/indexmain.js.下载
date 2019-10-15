@@ -1,0 +1,152 @@
+/**
+ * Created by admin on 15/6/29.
+ */
+    $(document).ready(function(){
+    	  if(navigator.userAgent.indexOf('iPad') <=-1){
+    		  var sound=new soundPl;
+  	          sound.init(false);
+    	  }
+    	
+
+        //setTimeout(function(){$(window).scrollTop(5000);},500);
+
+        ocj.globalInit.ready();
+
+        if(typeof (hcmd)=='undefined'){
+            hcmd=new websystem();
+            hcmd.update($("body"));
+        }
+        //---点击切换换一批
+        hcmd.clickToChangeShow($(".hyouwilllike"),$(".hclickChange"));
+
+        $(".silderNavNoControl").each(function(i){
+            hcmd.setslick($(this),{
+                autoplay: true,
+                autoplaySpeed: 5000,
+                arrows:false,
+                dots:true
+            });
+        });
+        $(".silderNav").each(function(i){
+            if($(this).hasClass("hindexbannerBox0")){
+                hcmd.setslick($(this),{
+                    //setColorDiv:$(".setColorChange"),
+                    autoplay: true,
+                    speed:1000,
+                    controlPos:[605,602],
+                    autoplaySpeed: 5000,
+                    dots:true
+                });
+            }else{
+                hcmd.setslick($(this),{
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    dots:true
+                });
+            }
+
+        });
+        if($(".hindexhuiyuanConentShowNavtab").length>0){
+            hcmd.navChangeDisplayBlock({
+                "navName":".hindexhuiyuanConentShowNavtab",
+                "navListName":".hindexhuiyuanConentShowNavtabBarButton",
+                "navChangeName":".hindexhuiyuanConentShowNavtabShowContentList",
+                "froceName":"hfroce",
+                "baseId":0
+            },null);
+        }
+        if($(".hIndexvideoNavChangeBox").length>0){
+            hcmd.navChangeDisplayBlock({
+                "navName":".hIndexvideoNavChangeBox",
+                "navListName":".hTvChangeBoxButton",
+                "navChangeName":".tv-product",
+                "froceName":"hfroce",
+                "baseId":0
+            },null);
+        }
+
+        $(".slider").each(function(i){
+            hcmd.setslick($(this),{
+                autoplay: true,
+                autoplaySpeed: 5000
+            });
+        });
+        hcmd.indexNavControl($(".indexLeftNav"));
+
+        //---锚点定位动画
+        hcmd.maodianPageMove();
+
+        hcmd.mouseenterAddMove({
+            froceClass:"froce",
+            baseClass:"indexTvreboLeftConentSmallItem",
+            hoverItem:$(".indexTvreboLeftConentSmallItemConent .indexTvreboLeftConentSmallItem")
+        });
+
+
+        //---动画
+        $("#prompt_dzfp").find("#prompt_close").bind("tap",function(e){
+            $("#prompt_dzfp").css({"display":"none"});
+        });
+        huiyuanmove();
+        huiyuanmove1();
+        function huiyuanmove(){
+            $(".hindexhuiyuanConentShowIconList .hindexhuiyuanConentShowIconListItem").hover(function(){
+                var _this=$(this);
+                TweenLite.to(_this.find(".hindexhuiyuanConentShowIconListItemTitel"),.2,{color:"#239CDC"});
+                TweenMax.to(_this.find(".hindexhuiyuanConentShowIconListItemImg"),.2,{top:-10});
+            },function(){
+                var _this=$(this);
+                TweenMax.to(_this.find(".hindexhuiyuanConentShowIconListItemImg"),.2,{top:0});
+                TweenLite.to(_this.find(".hindexhuiyuanConentShowIconListItemTitel"),.2,{color:"#424242"});
+            });
+        }
+        function huiyuanmove1(){
+            $(".hindexProjectListBoxLeftConent1 .foodIconList").hover(function(){
+                var _this=$(this);
+                TweenLite.to(_this.find(".foodIconListText a"),.2,{color:"#239CDC"});
+                TweenMax.to(_this.find(".foodIconListImg"),.2,{top:-10});
+            },function(){
+                var _this=$(this);
+                TweenMax.to(_this.find(".foodIconListImg"),.2,{top:0});
+                TweenLite.to(_this.find(".foodIconListText a"),.2,{color:"#424242"});
+            });
+
+            if($(".hindexProjectListBoxLeftConent2ListContentimg").length>0){
+                $(".hindexProjectListBoxLeftConent2ListContentimg img").hover(function(){
+                    var _this=$(this);
+                    TweenMax.to(_this,.5,{top:-10});
+                },function(){
+                    var _this=$(this);
+                    TweenLite.to(_this,.5,{top:0});
+                });
+            }
+        }
+
+        $('.themeEnterSlider').on('init', function(slick){
+            $(this).css({'overflow':'visible'});
+            //$(this).find('.themeEnterPrev').css({'display':'none'});
+            //$(this).find('.themeEnterNext').css({'display':'none'});
+            $(this).find('.themeEnterPrev').animate({'opacity':0},0);
+            $(this).find('.themeEnterNext').animate({'opacity':0},0);
+        });
+
+        $('.themeEnterSlider').slick({
+            infinite:true,
+            dots: false,
+            autoplay:false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            prevArrow:'<div class="themeEnterPrev"></div>',
+            nextArrow:'<div class="themeEnterNext"></div>'
+        });
+
+        $('.themeEnterSliderWrap').hover(function(){
+            $(this).find('.themeEnterPrev').animate({'opacity':1},250);
+            $(this).find('.themeEnterNext').animate({'opacity':1},250);
+        },function(){
+            $(this).find('.themeEnterPrev').animate({'opacity':0},250);
+            $(this).find('.themeEnterNext').animate({'opacity':0},250);
+        })
+
+
+    });

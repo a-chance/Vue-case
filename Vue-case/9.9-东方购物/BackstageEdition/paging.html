@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>分页功能</title>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+</head>
+
+<body>
+    <div id="demo7"></div>
+    <script src="layui/layui.js" charset="utf-8"></script>
+    <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+    <script>
+        layui.use(['laypage', 'layer'], function () {
+            var laypage = layui.laypage
+                , layer = layui.layer;
+            
+
+            //完整功能
+            laypage.render({
+                elem: 'demo7'
+                , count: 100
+                , layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+                , jump: function (obj) {
+                    // console.log(obj)
+                }
+            });
+            
+            //调用分页
+            laypage.render({
+                elem: 'demo20', 
+                count: data.length,
+                jump: function (obj) {                    
+                    //模拟渲染
+                    document.getElementById('biuuu_city_list').innerHTML = function () {
+                        var arr = []
+                            , thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
+                        layui.each(thisData, function (index, item) {
+                            arr.push('<li>' + item + '</li>');
+                        });
+                        return arr.join('');
+                    }();
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

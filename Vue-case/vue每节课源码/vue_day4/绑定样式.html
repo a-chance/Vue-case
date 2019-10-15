@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p style='background:red' :style="{backgroundColor:yanse}"
+       >我是p标签</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+</body>
+
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            yanse:'lightblue',
+            style1:{
+                backgroundColor:'red',
+            },
+            style2:{
+                width:'200px',
+                height:'200px'
+            }
+        },
+        // beforeCreate(){
+        //     debugger
+        // },
+        // created(){
+        //     debugger
+        // },
+    })
+
+    /*
+    *
+        :style=对象
+            对象的键名是标签的属性名 键值是标签的属性值
+
+        :style=数组
+
+            多个对象的键名是标签的属性名
+            多个对象的键值是标签的属性值
+    *
+    *
+    * */
+
+</script>
+</html>

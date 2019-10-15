@@ -1,0 +1,146 @@
+#main {
+  width: 1110px;
+  margin: 0 auto;
+}
+#main .newuserlogin-wrap {
+  width: 870px;
+  margin-left: 95px;
+  padding: 50px 0 70px 0;
+}
+#main .newuserlogin-wrap .left-banner {
+  width: 450px;
+  height: 300px;
+  margin-top: 28px;
+}
+#main .newuserlogin-wrap .left-banner .swiper-container {
+  width: 450px;
+  height: 300px;
+}
+#main .newuserlogin-wrap .left-banner .swiper-slide {
+  width: 100%;
+  height: 100%;
+  font-size: 0.666666rem;
+  text-align: center;
+  line-height: 4.666666rem;
+  color: #000;
+}
+#main .newuserlogin-wrap .rig-login {
+  border: 1px solid #e7e7e7;
+  width: 345px;
+  height: 380px;
+  margin-left: 60px;
+  border: 5px solid #f7f7f7;
+}
+#main .newuserlogin-wrap .rig-login .form {
+  padding-left: 39px;
+  padding-top: 15px;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row {
+  margin-bottom: 14px;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row .form-rowtit {
+  width: 270px;
+  padding-bottom: 4px;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row .form-rowtit span {
+  float: left;
+  color: #474747;
+  font-size: 13px;
+  font-weight: bold;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row .form-rowtit .yzm-tips {
+  float: left;
+  display: none;
+  color: #ff0000;
+  font-weight: normal;
+  margin-left: 10px;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row .form-rowinp {
+  color: #333333;
+  font-size: 14px;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row .form-rowinp input {
+  overflow: hidden;
+  height: 20px;
+  line-height: 20px;
+  width: 203px;
+  padding: 6px 30px 7px 35px;
+  border: 1px solid #c9c8cf;
+  color: #9da6ab;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row .form-rowinp input.username {
+  background: url(../img/newlogin.inputbg1.jpg) no-repeat;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row .form-rowinp input.pwd {
+  background: url(../img/newlogin.inputbg2.jpg) no-repeat;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row .form-rowinp input.yzm {
+  width: 78px;
+  padding-left: 10px;
+  padding-right: 20px;
+  color: #333333;
+  font-size: 16px;
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid #c9c8cf;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row .form-rowinp .yzm-img {
+  width: 80px;
+  height: 40px;
+  margin-top: -2px;
+  margin-left: 7px;
+  line-height: 40px;
+  text-align: center;
+  color: blue;
+  font-size: 28px;
+  font-weight: bolder;
+}
+#main .newuserlogin-wrap .rig-login .form .form-row .form-rowinp .change-yzm {
+  width: 36px;
+  height: 32px;
+  margin-left: 20px;
+  line-height: 16px;
+  margin-top: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+#main .newuserlogin-wrap .rig-login .form .rember-wrap {
+  width: 270px;
+  margin-bottom: 14px;
+}
+#main .newuserlogin-wrap .rig-login .form .rember-wrap input,
+#main .newuserlogin-wrap .rig-login .form .rember-wrap label {
+  float: left;
+  vertical-align: middle;
+  user-select: none;
+}
+#main .newuserlogin-wrap .rig-login .form .rember-wrap input {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+}
+#main .newuserlogin-wrap .rig-login .form .rember-wrap .free-reg {
+  display: block;
+  float: right;
+  color: #0080c6;
+  font-weight: bold;
+  font-size: 14px;
+}
+#main .newuserlogin-wrap .rig-login .form .others {
+  width: 270px;
+  color: #a4a4a4;
+  margin-top: 12px;
+}
+#main .newuserlogin-wrap .rig-login .form .others span {
+  float: left;
+  padding-top: 4px;
+}
+#main .newuserlogin-wrap .rig-login .form .others .others-link {
+  float: right;
+  margin-top: 5px;
+}
+#main .newuserlogin-wrap .rig-login .form .others .others-link a {
+  float: left;
+  margin-left: 10px;
+}

@@ -1,0 +1,1986 @@
+body {
+    width: 100%;
+}
+
+// 开始 菜单
+.slidermenu {
+    position: relative;
+    background-color: #ffffff;
+
+    // 热销直播
+    .rxbox {
+        .show-program {
+            width: 970px;
+            height: 90px;
+            margin: 0 auto;
+            padding-left: 220px;
+
+            .program-l {
+                width: 457px;
+                height: 84px;
+
+                .tv-changebox {
+                    width: 60px;
+                    height: 80px;
+                    margin-top: 4px;
+                    margin-left: 5px;
+
+                    .tv-changebox-but {
+                        position: relative;
+                        width: 60px;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
+                        background: url(../img/channelchange.png) no-repeat;
+                        cursor: pointer;
+
+                        .xiejiao {
+                            position: absolute;
+                            overflow: hidden;
+                            width: 50px;
+                            height: 10px;
+                            top: 40px;
+                            right: 0;
+                        }
+                    }
+                }
+
+                .tv-conbox {
+                    width: 390px;
+                    height: 74px;
+                    padding-top: 4px;
+                    margin-top: 4px;
+                    margin-left: -1px;
+                    border: 1px solid #e2e2e2;
+
+                    .pic {
+                        display: block;
+                        position: relative;
+                        overflow: hidden;
+                        width: 100px;
+                        height: 70px;
+                        margin-left: 4px;
+
+                        span {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 33px;
+                            height: 33px;
+                            transform: translate(-50%, -50%);
+                            background: url(../img/bg.header.play.btn.png) no-repeat;
+                            z-index: 2;
+                        }
+
+                        img {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 160px;
+                            height: 160px;
+                            animation: imgmove 5s infinite;
+                        }
+                    }
+
+                    .tvshopping-pricebox {
+                        position: relative;
+                        width: 260px;
+                        margin-left: 9px;
+                        padding-right: 17px;
+
+                        .tvlogoimg {
+                            width: 92px;
+                            height: 22px;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            .tvplaytime {
+                                position: absolute;
+                                top: 11px;
+                                right: 18px;
+                                margin-top: -8px;
+                            }
+                        }
+
+                        .name {
+                            width: 260px;
+                            height: 16px;
+                            margin-top: 2px;
+                            line-height: 16px;
+                        }
+
+                        .buymoney {
+                            margin-top: 6px;
+
+                            .price {
+                                float: left;
+                                padding-top: 2px;
+                                color: #ea0505;
+
+                                b {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+
+                        .youhuiicon {
+                            width: 46px;
+                            height: 16px;
+                            margin-top: 3px;
+                            margin-left: 10px;
+                            color: #ff8400;
+
+                            .jf {
+                                margin-top: 1px;
+                                padding: 0 2px;
+                                background: #ff8400;
+                                color: #fff;
+                            }
+                        }
+
+                        .tvshow {
+                            display: block;
+                            width: 84px;
+                            height: 22px;
+                            border: 1px solid #f22d25;
+                            color: #f22d25;
+                            line-height: 22px;
+                            text-align: center;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+            .program-r {
+                width: 387px;
+                height: 78px;
+                margin-left: 5px;
+                margin-top: 4px;
+
+                img {
+                    width: 387px;
+                    height: 78px;
+                    border: 1px solid #e2e2e2;
+                }
+            }
+
+            .program-adver {
+                width: 112px;
+                height: 48px;
+                margin-left: 4px;
+                margin-top: 22px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    // 底层轮播图
+    .bannerbox {
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            z-index: 1;
+
+            .banner-box {
+                width: 100%;
+                height: 500px;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .tablist {
+                position: absolute;
+                bottom: 2%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 2;
+
+                li {
+                    position: relative;
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 2px;
+                    padding: 0;
+                    cursor: pointer;
+                    background-color: #ccc;
+                    border-radius: 50%;
+                }
+
+                li:hover {
+                    background-color: #f12e24;
+                }
+
+                li.active {
+                    background-color: #f12e24;
+                }
+            }
+
+            .btn {
+                display: none;
+                position: absolute;
+                width: 27px;
+                height: 43px;
+                top:50%;
+                transform: translateY(-50%);
+                background-color: #ffffff;
+                z-index: 9999;
+                border: 1px solid #c1c1c1;
+                cursor: pointer;
+                overflow: hidden;
+
+                .jiantouimg {
+                    position: absolute;
+                    width: 13px;
+                    height: 21px;
+                    top: 11px;
+                    right: 5px;
+
+                }
+
+                .slicknumbut {
+                    text-align: right;
+                    position: absolute;
+                    top: 13px;
+                    right: 30px;
+                    font-size: 14px;
+
+                    span {
+                        color: #f12e24;
+                    }
+                }
+            }
+
+            .prevbox {
+                // left: 390px;
+                left: 5px;
+
+                .jiantouimg {
+                    left: 5px;
+                    background: url(../img/leftjiantou.png) no-repeat;
+                }
+
+                .slicknumbut {
+                    left: 30px;
+                }
+            }
+
+            .nextbox {
+                // right: 420px;
+                right: 5px;
+                
+                .jiantouimg {
+                    right: 5px;
+                    background: url(../img/rightjiantou.png) no-repeat;
+                }
+
+                .slicknumbut {
+                    right: 30px;
+                }
+            }
+        }
+
+        .banner:hover {
+
+            .prevbox,
+            .nextbox {
+                display: block;
+            }
+        }
+
+        // 底层右侧内容
+        .content {
+            height: 500px;
+            position: absolute;
+
+            .mask {
+                position: absolute;
+                top: 90px;
+                left: 221px;
+                width: 969px;
+                height: 500px;
+                z-index: 999;
+                background: pink;
+                opacity: 0.5;
+            }
+
+            .default-con-wrap {
+                position: absolute;
+                top: 90px;
+                right: 0;
+
+                .default-con-itemimg {
+                    width: 250px;
+                    height: 245px;
+                    margin-bottom: 10px;
+                    position: relative;
+
+                    .default-con-imgbox {
+                        width: 100%;
+                        height: auto;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    .conimgbox-intrbox {
+                        background-color: #ffffff;
+                        padding: 10px 0 10px 0;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 53px;
+
+                        .juchi {
+                            font-size: 0;
+                            height: 6px;
+                            overflow: hidden;
+                            background-image: url(../img/xiaojiantou.png);
+                            width: 100%;
+                            position: absolute;
+                            top: -5px;
+                            left: 0;
+                        }
+
+                        .conimgbox-tit {
+                            font-size: 16px;
+                            color: #2c2c2c;
+                            text-align: center;
+                            padding: 2px 0 8px 0;
+                            font-weight: bold;
+                        }
+
+                        .conimgbox-p {
+                            font-size: 14px;
+                            color: #2c2c2c;
+                            text-align: center;
+                            padding: 4px 0 0 0;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    // 主列表
+    .content {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        height: 590px;
+        z-index: 10;
+
+        // 列表
+        .menu-list {
+            position: relative;
+            width: 220px;
+            height: 590px;
+            background-image: url(../img/tcfff.png);
+            border-right: 1px solid #e0dfdf;
+            z-index: 19;
+
+            .menu-item {
+                width: 195px;
+                height: 39px;
+                padding: 0 0 0 26px;
+                line-height: 39px;
+                cursor: pointer;
+
+                .item-img {
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-right: 8px;
+                    color: rgb(51, 51, 51);
+                }
+
+                .item-button {
+                    font-size: 13px;
+                }
+
+                .con1-txt-wrap {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 220px;
+                    background-color: #fff;
+                    width: 969px;
+                    height: 590px;
+                    // z-index: 999;
+
+                    // 弹性盒子-文本
+                    .tanxin-txt {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        height: 590px;
+                        flex-wrap: wrap;
+
+                        .txt-box-list {
+                            width: 283px;
+                            padding-top: 25px;
+                            padding-left: 40px;
+                            margin-bottom: 8px;
+
+                            li.txt-list-box {
+                                font-size: 14px;
+                                color: #414040;
+                                font-weight: bold;
+                                padding-bottom: 10px;
+                                border-bottom: 1px solid #d9d9d9;
+                                line-height: 1;
+                            }
+
+                            li.txt-con-box {
+                                float: left;
+                                margin: 10px 10px 0 0;
+                                font-size: 14px;
+                                line-height: 1;
+                            }
+                        }
+                    }
+
+                    // 弹性盒子-图片
+                    .tanxin-img {
+                        display: flex;
+                        flex-direction: column;
+                        align-content: flex-end;
+                        flex-wrap: wrap;
+                        height: 590px;
+
+                        .tanxinimg-box {
+                            width: 295px;
+
+                            img {
+                                width: 295px;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .menu-item:hover {
+                .item-img {
+                    color: #239cdc;
+                }
+
+                .item-button {
+                    a {
+                        font-size: 13px;
+                        color: #239cdc;
+                    }
+                }
+
+                .con1-txt-wrap {
+                    display: block;
+                }
+            }
+
+            .menu-itembgbox {
+                width: 220px;
+                background: url(../img/leftnavbg.png) no-repeat 0 -37px;
+
+                .menu-itembg1 {
+                    width: 200px;
+                    height: 30px;
+                    margin: 0 10px;
+                    padding-top: 9px;
+                    border-bottom: 1px dotted #fff;
+                    cursor: pointer;
+
+                    img {
+                        width: auto;
+                        height: 23px;
+                    }
+                }
+
+                .menu-itembg1:last-child {
+                    border-bottom: none;
+                }
+
+                .menu-itembg2 {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        right: -10px;
+                        height: 22px;
+                        width: 22px;
+                    }
+                }
+
+                .menulist-con2-wrap {
+                    display: none;
+                    position: absolute;
+                    width: 969px;
+                    height: 500px;
+                    top: 88px;
+                    left: 220px;
+                    background-color: #fff;
+                    border: 1px solid transparent;
+
+                    .con2-leftbox {
+                        z-index: 998;
+                        width: 107px;
+                        height: 498px;
+                        overflow: hidden;
+                        position: relative;
+                        background-color: #ffffff;
+
+                        .con2l-top-list {
+
+                            .con2l-top-logo {
+                                width: 84px;
+                                height: 22px;
+                                text-align: center;
+                                padding: 20px 3px 10px 3px;
+                                margin: 0 auto;
+                                border-bottom: 1px dotted #b2b2b2;
+                            }
+
+                            .con2l-top-list {
+                                padding-left: 17px;
+
+                                .con2l-top-item {
+                                    display: block;
+                                    margin: 15px 0;
+                                    font-size: 14px;
+                                    color: #505966;
+                                }
+                            }
+                        }
+
+                        .con2l-bot-logobox {
+
+                            .con2l-bot-logo-item {
+                                border-bottom: 1px solid #ebedef;
+                            }
+                        }
+                    }
+
+                    .con2-rigbox {
+                        width: 860px;
+                        height: 498px;
+                        overflow: hidden;
+                        position: relative;
+                        z-index: 998;
+
+                        .con2-rigbox-type1 {
+                            position: absolute;
+                            top: 20px;
+                            left: 20px;
+                        }
+
+                        .con2-rigbox-type2 {
+                            position: absolute;
+                            top: 20px;
+                            left: 609px;
+                        }
+
+                        .con2-rigbox-type3 {
+                            position: absolute;
+                            top: 370px;
+                            left: 20px;
+                        }
+
+                        .con2-rigbox-type4 {
+                            position: absolute;
+                            top: 370px;
+                            left: 315px;
+                        }
+
+                        .con2-rigbox-type5 {
+                            position: absolute;
+                            top: 271px;
+                            left: 609px;
+                        }
+                    }
+                }
+
+            }
+
+            .menu-itembgbox:hover .menulist-con2-wrap {
+                display: block;
+            }
+
+            .menu-itembgbox1:hover {
+                background: #c40001 url(../img/frocejuxing.png) no-repeat right top;
+
+                .menulist-con2-wrap {
+                    border-color: #c40001;
+                }
+            }
+
+            .menu-itembgbox2:hover {
+                background: #ff6728 url(../img/frocejuxing.png) no-repeat right top;
+
+                .menulist-con2-wrap {
+                    border-color: #ff6728;
+                }
+
+            }
+
+            .menu-itembgbox3:hover {
+                background: #61117b url(../img/frocejuxing.png) no-repeat right top;
+
+                .menulist-con2-wrap {
+                    border-color: #61117b;
+                }
+            }
+
+            .menu-itembgbox4:hover {
+                background: #784830 url(../img/frocejuxing.png) no-repeat right top;
+
+                .menulist-con2-wrap {
+                    border-color: #784830;
+                }
+            }
+        }
+
+        .hide-mask {
+            position: absolute;
+            top: 90px;
+            left: 220px;
+            width: 970px;
+            height: 500px;
+            background: transparent;
+        }
+    }
+}
+
+
+#main {
+    padding-top: 20px;
+    background-color: #f6f6f6;
+
+    .content {
+        width: 1190px;
+
+        // 主播推荐
+        .anchor-recommend {
+
+            .recommend-tit {
+                font-size: 24px;
+                color: #424242;
+                padding-left: 10px;
+                padding-bottom: 13px;
+                padding-top: 20px;
+
+                a {
+                    margin-left: 30px;
+                    font-size: 16px;
+                }
+            }
+
+            .recommend-con {
+                width: 100%;
+
+                .recommend-left {
+                    position: relative;
+                    width: 420px;
+                    height: 666px;
+                    margin-right: 20px;
+                    border: 1px solid #e8e6e6;
+
+                    .recommendleft-top {
+                        position: relative;
+                        width: 418px;
+                        height: 418px;
+                        cursor: pointer;
+
+                        .banner-box {
+                            width: 100%;
+                            height: 100%;
+
+                            img {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+
+                        .tablist {
+                            position: absolute;
+                            bottom: 2%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            z-index: 2;
+
+                            li {
+                                position: relative;
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                margin: 0 2px;
+                                padding: 0;
+                                cursor: pointer;
+                                background-color: #ccc;
+                                border-radius: 50%;
+                            }
+
+                            li:hover {
+                                background-color: #f12e24;
+                            }
+
+                            li.active {
+                                background-color: #f12e24;
+                            }
+                        }
+
+                        .btn {
+                            display: none;
+                            position: absolute;
+                            // width: 73px;
+                            width: 27px;
+                            height: 43px;
+                            top: 75%;
+                            background-color: #ffffff;
+                            z-index: 9999;
+                            border: 1px solid #c1c1c1;
+                            cursor: pointer;
+                            overflow: hidden;
+
+                            .jiantouimg {
+                                position: absolute;
+                                width: 13px;
+                                height: 21px;
+                                top: 11px;
+                                right: 5px;
+
+                            }
+
+                            .slicknumbut {
+                                text-align: right;
+                                position: absolute;
+                                top: 13px;
+                                right: 30px;
+                                font-size: 14px;
+
+                                span {
+                                    color: #f12e24;
+                                }
+                            }
+                        }
+
+                        .prevbox {
+                            left: -1px;
+
+                            .jiantouimg {
+                                left: 5px;
+                                background: url(../img/leftjiantou.png) no-repeat;
+                            }
+
+                            .slicknumbut {
+                                left: 30px;
+                            }
+                        }
+
+                        .nextbox {
+                            right: -1px;
+
+                            .jiantouimg {
+                                right: 5px;
+                                background: url(../img/rightjiantou.png) no-repeat;
+                            }
+
+                            .slicknumbut {
+                                right: 30px;
+                            }
+                        }
+                    }
+
+                    .recommend-left-tit {
+                        width: 100%;
+                        padding: 23px 0 8px 10px;
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: #2c2c2c;
+                        text-align: left;
+                    }
+
+                    .recommend-left-money {
+                        font-size: 16px;
+                        color: #ea0505;
+                        text-align: left;
+                        padding: 8px 0 0 10px;
+                        font-weight: bold;
+                    }
+
+                    .recommend-intrwrap {
+                        padding: 15px 15px 24px;
+                        border-top: 1px dotted #b2b2b2;
+                        margin-top: 20px;
+                    }
+
+                    .boradcastRecommendText {
+                        padding: 15px;
+                        border: 1px solid #b2b2b2;
+                        background-color: #f7f7f7;
+
+                        p {
+                            color: #2c2c2c;
+                            font-size: 14px;
+                            line-height: 18px;
+                            height: 36px;
+                            overflow: hidden;
+                        }
+                    }
+                }
+
+                .recommend-rig {
+                    width: 748px;
+                    height: auto;
+
+                    .recommend-list {
+
+                        li {
+                            float: left;
+                            border: 1px solid #e8e6e6;
+                            width: 220px;
+                            height: 305px;
+                            padding: 8px;
+                            background: #ffffff;
+                            margin-right: 17px;
+
+                            a {
+                                display: block;
+                                width: 220px;
+                                height: 220px;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+
+                            .item-tit {
+                                height: 36px;
+                                margin: 12px 0 8px 0;
+                                padding: 0 0 0 5px;
+                                overflow: hidden;
+                                font-size: 14px;
+                                color: #2c2c2c;
+                                text-align: left;
+                                line-height: 18px;
+                            }
+
+                            .item-price {
+                                padding-top: 2px;
+                                font-size: 16px;
+                                color: #ea0505;
+                                text-align: left;
+                                padding: 8px 0 0 0;
+                                font-weight: bold;
+
+                                span {
+                                    color: #ea0505;
+                                    font-size: 14px;
+                                }
+
+                                del {
+                                    color: #bbbbbb;
+                                    font-size: 12px;
+                                    margin-left: 6px;
+                                    font-weight: normal;
+                                }
+                            }
+                        }
+
+                        li:nth-child(3n) {
+                            margin-right: 0;
+                        }
+
+                        li:hover {
+                            border-color: red;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        // 团购
+        .group-buying {
+            width: 100%;
+
+            .group-buying-con {
+                width: 100%;
+
+                .groupbuying-left {
+                    position: relative;
+                    width: 418px;
+                    margin-right: 20px;
+                    background-color: #ffffff;
+                    cursor: pointer;
+
+                    .banner-box {
+                        position: relative;
+                        width: 418px;
+                        height: 321px;
+                        padding: 10px 9px 0;
+                        text-align: center;
+                        box-sizing: border-box;
+
+                        img {
+                            position: absolute;
+                            top: 10px;
+                            left: 9px;
+                            width: 400px;
+                            height: 280px;
+                            z-index: 0;
+                        }
+                    }
+
+                    .tablist {
+                        position: absolute;
+                        bottom: 2%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 2;
+
+                        li {
+                            position: relative;
+                            display: inline-block;
+                            width: 10px;
+                            height: 10px;
+                            margin: 0 2px;
+                            padding: 0;
+                            cursor: pointer;
+                            background-color: #ccc;
+                            border-radius: 50%;
+                        }
+
+                        li:hover {
+                            background-color: #f12e24;
+                        }
+
+                        li.active {
+                            background-color: #f12e24;
+                        }
+                    }
+
+                    .btn {
+                        display: none;
+                        position: absolute;
+                        width: 27px;
+                        height: 43px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background-color: #ffffff;
+                        z-index: 9999;
+                        border: 1px solid #c1c1c1;
+                        cursor: pointer;
+                        overflow: hidden;
+
+                        .jiantouimg {
+                            position: absolute;
+                            width: 13px;
+                            height: 21px;
+                            top: 11px;
+                            right: 5px;
+                        }
+
+                        .slicknumbut {
+                            text-align: right;
+                            position: absolute;
+                            top: 13px;
+                            right: 30px;
+                            font-size: 14px;
+
+                            span {
+                                color: #f12e24;
+                            }
+                        }
+                    }
+
+                    .prevbox {
+                        // display: none;
+                        left: -1px;
+
+                        .jiantouimg {
+                            left: 5px;
+                            background: url(../img/leftjiantou.png) no-repeat;
+                        }
+
+                        .slicknumbut {
+                            left: 30px;
+                        }
+                    }
+
+                    .nextbox {
+                        // display: none;
+                        right: -1px;
+
+                        .jiantouimg {
+                            right: 5px;
+                            background: url(../img/rightjiantou.png) no-repeat;
+                        }
+
+                        .slicknumbut {
+                            right: 30px;
+                        }
+                    }
+                }
+
+                .groupbuying-rig {
+                    width: 748px;
+                    height: 321px;
+                }
+            }
+
+        }
+
+        // 自定义广告
+        .custom-advertisement {
+            overflow: hidden;
+            max-width: 1189px;
+            height: 130px;
+            margin: 33px auto 31px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        // 食品饮料
+        .food {
+            width: 100%;
+            margin-bottom: 30px;
+
+            .recommend-tit {
+                padding-bottom: 11px;
+                border-bottom: 1px solid #424242;
+                margin-bottom: 10px;
+            }
+
+            .food-con {
+                width: 100%;
+
+                .food-left {
+                    width: 290px;
+                    height: auto;
+
+                    .food-banner {
+                        position: relative;
+                        width: 100%;
+                        height: 350px;
+                        cursor: pointer;
+
+                        .banner-box {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            box-sizing: border-box;
+
+                            img {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        .tablist {
+                            position: absolute;
+                            bottom: 2%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            z-index: 2;
+
+                            li {
+                                // position: relative;
+                                display: inline-block;
+                                width: 10px;
+                                height: 10px;
+                                margin: 0 2px;
+                                padding: 0;
+                                cursor: pointer;
+                                background-color: #ccc;
+                                border-radius: 50%;
+                            }
+
+                            li:hover {
+                                background-color: #f12e24;
+                            }
+
+                            li.active {
+                                background-color: #f12e24;
+                            }
+                        }
+
+                        .btn {
+                            display: none;
+                            position: absolute;
+                            width: 27px;
+                            height: 43px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background-color: #ffffff;
+                            z-index: 9999;
+                            border: 1px solid #c1c1c1;
+                            cursor: pointer;
+                            overflow: hidden;
+
+                            .jiantouimg {
+                                position: absolute;
+                                width: 13px;
+                                height: 21px;
+                                top: 11px;
+                                right: 5px;
+
+                            }
+
+                            .slicknumbut {
+                                text-align: right;
+                                position: absolute;
+                                top: 13px;
+                                right: 30px;
+                                font-size: 14px;
+
+                                span {
+                                    color: #f12e24;
+                                }
+                            }
+                        }
+
+                        .prevbox {
+                            left: -1px;
+
+                            .jiantouimg {
+                                left: 5px;
+                                background: url(../img/leftjiantou.png) no-repeat;
+                            }
+
+                            .slicknumbut {
+                                left: 30px;
+                            }
+                        }
+
+                        .nextbox {
+                            right: -1px;
+
+                            .jiantouimg {
+                                right: 5px;
+                                background: url(../img/rightjiantou.png) no-repeat;
+                            }
+
+                            .slicknumbut {
+                                right: 30px;
+                            }
+                        }
+                    }
+
+                    .food-sort {
+                        height: 237px;
+                        border-right: 1px solid #e8e8e8;
+
+                        .foodsort-item {
+                            float: left;
+                            width: 95px;
+                            height: 117px;
+                            border: 1px solid #e8e8e8;
+                            border-top: none;
+                            border-right: none;
+                            cursor: pointer;
+
+                            .foodsort-box {
+                                position: relative;
+                                width: 95px;
+                                height: 82px;
+
+                                img {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    transition: top 0.2s;
+                                }
+                            }
+
+                            .foodtit-box {
+                                width: 95px;
+                                text-align: center;
+                                font-size: 14px;
+                                color: #2c2c2c;
+                                text-align: center;
+                            }
+                        }
+
+                        .foodsort-item:hover {
+                            img {
+                                top: 25px;
+                            }
+
+                            .foodtit-box {
+                                a {
+                                    color: #239cdc;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .food-rig {
+                    width: 900px;
+
+                    li {
+                        float: left;
+                        overflow: hidden;
+                        width: 220px;
+                        height: 292px;
+                        margin: 0 0 5px 5px;
+                        background-color: #ffffff;
+                        box-sizing: border-box;
+                        border: 1px solid transparent;
+
+                        img {
+                            width: 220px;
+                            height: 220px;
+                        }
+
+                        .food-tit {
+                            height: 36px;
+                            margin: 4px 0 3px 0;
+                            padding: 0 0 0 5px;
+                            font-size: 14px;
+                            line-height: 18px;
+                        }
+
+                        .item-price {
+                            padding-top: 2px;
+                            padding-left: 10px;
+                            font-size: 16px;
+                            color: #ea0505;
+                            text-align: left;
+                            padding: 2px 0 0 10px;
+                            font-weight: bold;
+
+                            del {
+                                color: #bbbbbb;
+                                font-size: 12px;
+                                margin-left: 6px;
+                                font-weight: normal;
+                            }
+                        }
+                    }
+
+                    li:hover {
+                        border: 1px solid red;
+                    }
+
+                }
+            }
+        }
+
+        // 家具厨房
+        .furniture {
+            width: 100%;
+            overflow: hidden;
+
+            .furniture-sort {
+                width: 270px;
+                height: 229px;
+                padding: 9px 10px 0;
+                background-color: #ffffff;
+
+                .furniture-recommend {
+                    margin-left: 15px;
+
+                    .furniture-list {
+                        height: 82px;
+                        padding-left: 41px;
+                        background: url(../img/tuijianbg.png) no-repeat left top;
+
+                        .furniture-price {
+                            font-size: 14px;
+                            color: #2c2c2c;
+                            background-image: url(../img/xiaoicon.png);
+                            background-repeat: no-repeat;
+                            padding-left: 13px;
+                            background-position: left 13px;
+                            line-height: 27px;
+                            word-break: keep-all;
+                            white-space: nowrap;
+                            overflow: hidden;
+                        }
+                    }
+                }
+
+                .brand-sort {
+                    width: 270px;
+                    height: 35px;
+                    margin-top: 22px;
+                    margin-bottom: 28px;
+                    text-align: center;
+
+                    a {
+                        float: left;
+                        margin: 0 5px;
+
+                        img {
+                            width: 77px;
+                            height: 35px;
+                            transition: all 0.2s;
+                        }
+                    }
+
+                    a:hover img {
+                        margin-top: -10px;
+                    }
+                }
+
+                .furniture-function-list {
+                    margin-top: 17px;
+                    width: 255px;
+                    height: auto;
+                    margin-left: 15px;
+                    font-size: 12px;
+                    color: #333;
+
+                    a {
+                        float: left;
+                        display: block;
+                        margin-right: 13px;
+                        margin-bottom: 6px;
+                    }
+                }
+            }
+        }
+
+        // 3C家电
+        .houseele {
+            width: 100%;
+
+            .houseele-sort {
+                width: 280px;
+                height: 100%;
+                background-color: #ffffff;
+                padding: 9px 5px 0 5px;
+
+                .houseele-logo-list {
+                    width: 88px;
+                    margin-top: 10px;
+                    margin-left: 8px;
+                    border-right: 1px dotted #ccc;
+
+                    a {
+                        display: block;
+                        height: 40px;
+                        margin: 0 4px 13px;
+
+                        img {
+                            width: 80px;
+                            height: auto;
+                        }
+                    }
+                }
+
+                .houseele-name-list {
+                    width: 160px;
+                    margin: 13px 0 0 18px;
+
+                    li {
+                        float: left;
+                        color: #2c2c2c;
+                        width: 80px;
+                        margin-bottom: 13px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        // 时尚服饰
+        .fashion-clothing {
+            width: 100%;
+
+            .clothing-logo-list {
+                padding: 2px 5px 3px;
+
+                a {
+                    float: left;
+                    width: 140px;
+                    height: 58px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        // 商城优选
+        .mall-select {
+            width: 100%;
+
+            // 公共样式
+            .product-price {
+                font-size: 16px;
+                color: #ea0505;
+                text-align: left;
+                font-weight: bold;
+                margin-left: 4px;
+                margin-top: 5px;
+
+                span {
+                    font-size: 14px;
+                }
+            }
+
+            .select-block {
+                width: 590px;
+
+                .select-block-top {
+                    height: 145px;
+
+                    .shop-intr {
+                        width: 250px;
+                        height: 145px;
+                        // padding-top: 20px;
+                        background: url(../img/4_20190722161054_15.jpg) no-repeat center;
+                        box-sizing: border-box;
+
+                        .shop-tit {
+                            display: block;
+                            width: 100%;
+                            color: #000;
+                            font-size: 20px;
+                            text-align: center;
+                            text-decoration: none;
+                        }
+
+                        .go-shop {
+                            display: block;
+                            width: 136px;
+                            padding: 10px;
+                            margin: 20px auto;
+                            text-align: center;
+                            font-size: 16px;
+                            color: #1c4976;
+                            text-decoration: none;
+                            border: 1px solid #1c4976;
+                            border-radius: 15px;
+                        }
+
+                        .go-shop:hover {
+                            border-color: #ea0505;
+                            background-color: #ffffff;
+                            color: #ea0505;
+                        }
+                    }
+
+                    .first-product {
+                        width: 340px;
+                        height: 145px;
+                        background-color: #e9ecf0;
+
+                        .firstproduct-left {
+                            width: 170px;
+                            margin-right: 15px;
+                            margin-top: 40px;
+                            font-size: 12px;
+
+                            .product-tit {
+                                overflow: hidden;
+                                height: 36px;
+                                padding: 0 0 0 5px;
+                                font-size: 14px;
+                                color: #2c2c2c;
+                                text-align: left;
+                                line-height: 18px;
+                                word-break: break-all;
+                            }
+
+
+                        }
+
+                        .firstproduct-rig {
+                            a {
+                                display: block;
+                                width: 117px;
+                                height: 117px;
+                                margin: 15px 15px 0 0;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .select-block-bot {
+                    background-color: #fff;
+                    padding: 20px 0 10px 0;
+
+                    .shopping-item {
+                        float: left;
+                        position: relative;
+                        width: 170px;
+                        margin: 0 13px;
+                        padding-bottom: 30px;
+
+
+                        .shopping-img {
+                            // display: block;
+                            width: 170px;
+                            height: 170px;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        .shopping-txt {
+                            position: absolute;
+                            width: 170px;
+                            left: 0;
+                            bottom: 0;
+                            background: rgba(255, 255, 255, 0.8);
+
+                            .shopping-tit {
+                                line-height: 18px;
+                                height: 36px;
+                                padding: 5px 10px 0 10px;
+                                overflow: hidden;
+                                font-size: 14px;
+                                color: #2c2c2c;
+                                text-align: left;
+                                word-break: break-all;
+                            }
+
+                            .product-price {
+                                text-align: center;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 猜你喜欢
+        .guess-like {
+            width: 100%;
+
+            .like-list {
+
+                .like-item {
+                    float: left;
+                    width: 220px;
+                    padding: 4px;
+                    margin-right: 10px;
+                    border: 1px solid #ccc;
+                    ;
+
+                    .like-img {
+                        width: 220px;
+                        height: 220px;
+
+                        img {
+                            width: 220px;
+                            height: 220px;
+                        }
+                    }
+
+                    .like-tit {
+                        line-height: 18px;
+                        height: 36px;
+                        margin: 4px 0 3px 0;
+                        padding: 0 0 0 5px;
+                        overflow: hidden;
+
+                        a {
+                            font-size: 14px;
+                            text-align: left;
+                        }
+                    }
+                }
+
+                .like-item:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        // 东方购物公益
+        .public-welfare {
+            width: 100%;
+            margin-top: 78px;
+
+            .public-welfare-left {
+                width: 427px;
+
+                .public-welfare-img {
+                    width: 100%;
+                    height: 210px;
+                }
+
+                .public-welfare-guide {
+                    width: 100%;
+                    height: 116px;
+                    padding-left: 14px;
+                    border: 1px solid #ccc;
+                    border-top: none;
+                    box-sizing: border-box;
+
+                    .publicwelfare-guide-tit {
+                        padding-top: 7px;
+                        padding-bottom: 7px;
+                        padding-left: 10px;
+                        font-size: 16px;
+                        color: #636363;
+                    }
+
+                    .publicwelfare-guide-item {
+                        float: left;
+                        height: auto;
+                        cursor: pointer;
+
+                        .guide-item-img {
+                            position: relative;
+
+                            a {
+
+                                display: block;
+                                width: 66px;
+                                height: 45px;
+
+                                img {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    width: 45px;
+                                    height: 45px;
+                                    transition: top 0.2s;
+                                }
+                            }
+                        }
+
+                        .guide-item-tit {
+                            text-align: center;
+                            ;
+                            font-size: 13px;
+                            margin-top: 4px;
+                        }
+                    }
+
+                    .publicwelfare-guide-item:hover {
+                        img {
+                            margin-top: -10px;
+                        }
+                    }
+                }
+            }
+
+            .public-welfare-rig {
+                float: left;
+                width: 750px;
+                height: auto;
+                margin-left: 10px;
+
+                // 公共样式
+                .sales-price {
+                    font-size: 14px;
+                    color: #acacac;
+                    padding-left: 5px;
+                    margin-bottom: 2px;
+                    margin-top: -2px;
+
+                    span {
+                        font-size: 12px;
+                    }
+                }
+
+                .public-welfare-navbar {
+                    border-bottom: 1px solid #424242;
+                    padding-left: 33px;
+
+                    li {
+                        float: left;
+                        position: relative;
+                        width: 149px;
+                        z-index: 1;
+                        padding-top: 1px;
+                        height: 48px;
+                        line-height: 48px;
+                        text-align: center;
+                        border: 1px solid #f6f6f7;
+                        border-bottom: none;
+                        font-size: 16px;
+                        cursor: pointer;
+                    }
+
+                    li.active {
+                        background-color: #f6f6f7;
+                        padding-top: 0;
+                        border-radius: 5px 5px 0 0;
+                        border: 1px solid #424242;
+                        border-bottom: 1px solid #f6f6f7;
+                        top: 1px;
+                    }
+                }
+
+                .public-welfare-navcon {
+                    display: none;
+                    width: 100%;
+                    margin-top: 9px;
+
+                    .public-navcon-list {
+                        display: none;
+
+                        .public-navcon-item {
+                            float: left;
+                            width: 170px;
+                            padding: 5px;
+                            background-color: #ffffff;
+                            margin-right: 10px;
+
+                            .public-navcon-img {
+                                width: 170px;
+                                height: 170px;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+
+                            .public-navcon-tit {
+                                padding-left: 5px;
+                                line-height: 18px;
+                                height: 36px;
+                                margin: 4px 0 3px 0;
+                                padding: 0 0 0 5px;
+                                overflow: hidden;
+                            }
+
+                            .member-price {
+                                font-size: 12px;
+                                color: #ea0505;
+                                padding-left: 5px;
+                                margin-bottom: 5px;
+
+                                span {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+
+                        .public-navcon-item:last-child {
+                            margin-right: 0;
+                        }
+
+                        .public-navcon-item:hover {
+                            cursor: pointer;
+                            box-shadow: 0 0 0 1px #f12e24;
+                        }
+
+                        .welfare-cols {
+                            position: relative;
+                            float: left;
+                            width: 350px;
+                            padding: 0 10px 10px 10px;
+                            background-color: #ffffff;
+                        }
+
+                        .welfare-cols-tit {
+                            display: block;
+                            line-height: 18px;
+                            height: 36px;
+                            margin: 4px 0 3px 0;
+                            padding: 0 0 0 5px;
+                            overflow: hidden;
+                            font-size: 14px;
+                            color: #2c2c2c;
+                            text-align: left;
+                        }
+
+                        .welfare-cols:hover {
+                            cursor: pointer;
+                            box-shadow: 0 0 0 1px #f12e24;
+                        }
+
+                        .price-wrap {
+                            padding-top: 3px;
+                        }
+
+                        .riz-zoawd-item {
+                            float: left;
+                            width: 170px;
+                            padding: 5px;
+                            margin-right: 10px;
+                            background-color: #fff;
+
+                            img {
+                                width: 170px;
+                                height: 170px;
+                            }
+
+                            .zoawd-item-tit {
+                                margin: 4px 0 3px;
+                                padding-left: 5px;
+                                font-size: 14px;
+                            }
+
+                            .point {
+                                color: #ea0505;
+                                padding-left: 5px;
+                                margin-bottom: 5px;
+                            }
+
+                            .surplus {
+                                display: inline;
+                                background-color: #5d5656;
+                                color: #ffffff;
+                                margin-left: 5px;
+                                padding: 0 5px 2px 5px;
+                            }
+                        }
+
+                        .riz-zoawd-item:last-child {
+                            margin-right: 0;
+                        }
+                    }
+
+                    .active {
+                        display: block;
+                    }
+                }
+
+                .welfare2 {
+
+                    .leftbox {
+                        position: relative;
+                        width: 350px;
+                        padding: 0 10px 10px 10px;
+                        background-color: #ffffff;
+                        margin-right: 10px;
+
+                        .bmrs {
+                            position: absolute;
+                            top: 0;
+                            right: 10px;
+                            width: 100px;
+                            height: 59px;
+                            background-image: url(../img/bgalpha80.png);
+                            margin-bottom: 10px;
+
+                            .bmrs-tit {
+                                text-align: center;
+                                color: #ffffff;
+                                font-size: 12px;
+                                padding-top: 3px;
+                                margin-bottom: 3px;
+
+                                span {
+                                    color: #ff4a01;
+                                    font-size: 18px;
+                                    position: relative;
+                                    top: 3px;
+                                }
+                            }
+
+                            .bmrs-reduce {
+                                color: #bfbfbf;
+                                text-align: center;
+                                font-size: 12px;
+                            }
+                        }
+
+                        .showitemimg {
+                            width: 100%;
+                            height: auto;
+                            text-align: center;
+
+                            img {
+                                width: 100%;
+                                height: 189px;
+                                cursor: pointer;
+                            }
+                        }
+
+                        .showitemtit {
+                            line-height: 18px;
+                            height: 36px;
+                            margin: 4px 0 3px 0;
+                            padding: 0 0 0 5px;
+                            overflow: hidden;
+                        }
+
+                        .saleprice {
+                            padding-top: 2px;
+
+                            .saleprice-left {
+                                font-size: 14px;
+                                color: #acacac;
+                                padding-left: 5px;
+                                margin-bottom: 2px;
+                                margin-top: -2px;
+
+                                span {
+                                    font-size: 12px;
+                                }
+                            }
+
+                            .saleprice-rig {
+                                font-size: 14px;
+                                color: #ea0505;
+
+                                span {
+                                    margin-left: 3px;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+
+                    .rigbox {
+                        margin-right: 0;
+                    }
+
+                    .leftbox:hover {
+                        box-shadow: 0 0 0px 1px #f12e24;
+                    }
+                }
+
+                .active {
+                    display: block;
+                }
+            }
+        }
+    }
+}

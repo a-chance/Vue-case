@@ -1,0 +1,1 @@
+INSERT INTO `user` VALUES (3, 'wwg', '123456asdf@', '18209515484', NULL);

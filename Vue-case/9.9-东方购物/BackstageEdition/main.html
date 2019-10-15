@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>用户信息管理</title>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/tanchuang.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/tanchuang.js"></script>
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo"><h2 style="margin-left: 28px;">文龙电商平台</h2></div>
+            <ul class="login-inf">
+                <li>
+                    <i class="iconfont icon-yonghuguanli mar-r5"></i>
+                    <span>欢迎你，管理员</span>
+                </li>
+                <li>
+                    <i class="iconfont icon-tuichu mar-r5"></i>
+                    <span class="quit"><a href="login.html" style="color: #999999;">退出系统</a></span>
+                </li>
+                <li class="search-box">
+                    <input type="text" placeholder="搜索...">
+                    <i class="iconfont icon-sousuo mar-r5 search"></i>
+                </li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域 -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">用户管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="###" class="sub-item">查看用户信息</a></dd>
+                            <dd><a href="###" class="sub-item">添加用户信息</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">订单管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="###" class="sub-item">列表一</a></dd>
+                            <dd><a href="###" class="sub-item">列表二</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">库存管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" class="sub-item">列表一</a></dd>
+                            <dd><a href="javascript:;" class="sub-item">列表二</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <iframe src="user_manage.html" frameborder="0" id="demoAdmin" style="width: 100%; height: 100%; padding: 0 0;"></iframe>
+        </div>
+    </div>
+    <script src="layui/layui.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        
+        //JavaScript代码区域
+        layui.use('element', function () {
+            var element = layui.element;
+        });
+
+        // 绑定点击事件，切花iframe的src
+        // 将所有要切换的页面放到数组中存储
+        (function () {            
+            let arr = ["user_manage.html", "user_add.html", "", "", "", ""];
+            // console.log($(".layui-nav dd"));
+            
+            $(".layui-nav dd").click(function () {             
+                $("#demoAdmin").attr("src", arr[$(this).index()]);
+            });
+
+            
+            // 3.搜索框：给搜索框绑定事件(搜索框可以通过账号和电话号码查找)
+            let searchBox = document.getElementsByClassName("search-box")[0].children;
+            
+            searchBox[1].onclick = function () {
+                let demo7 = document.getElementById("demoAdmin").contentWindow.document.getElementById("demo7");
+                demo7.style.display = "none";
+                
+                // 获取输入框中的内容
+                let con = searchBox[0].value.trim().toLowerCase();
+                
+                let sql = ""
+                if(!isNaN(Number(con))){
+                    // 是数字，也就是电话号码
+                    sql = `select * from admin where phone='${con}'`;
+                } else {
+                    // 不是数字，也就是用户名
+                    sql = `select * from admin where username='${con}'`;
+                }
+                
+                ajax({
+                    type: 'post',
+                    url: 'api/user_manage.php',
+                    data : {
+                        'sql' : sql
+                    },
+                    success: str => {
+                        // console.log(str)
+                        let arr = JSON.parse(str);
+                        // console.log(arr);
+                        let html = arr.map(item => {
+                            return `<tr>
+                                        <td><input type="checkbox" class="sele"></td>
+                                        <td>${item.id}</td>
+                                        <td>${item.username}</td>
+                                        <td>${item.pwd}</td>
+                                        <td>${item.phone}</td>
+                                        <td>${item.email}</td>
+                                        <td class="btn-box">
+                                            <input type="button" value="修改" class="copy btn">
+                                            <input type="button" value="删除" class="del btn">
+                                            <input type="button" value="保存" class="save btn">
+                                        </td>
+                                    </tr>`;
+                        }).join('');
+                        // **************************
+                        // 获取iframe中的节点需要按以下方式获取
+                        let tbody = document.getElementById("demoAdmin").contentWindow.document.getElementById("tbody");
+                        let thead = document.getElementById("demoAdmin").contentWindow.document.getElementById("thead");
+                        let theadTips = thead.getElementsByTagName("td")[0];                        
+                        // 清空tbody中的内容
+                        
+                        tbody.innerHTML = "";
+                        tbody.innerHTML = html;
+                        theadTips.innerHTML = `温馨提示：共有 <span style="color: red; font-size: 20px;">${arr.length}</span> 条数据！`;
+                        
+                        // 为了增强用户体验，搜索后的数据也能执行修改、删除、保存操作
+                        // 2.给修改，删除，保存按钮绑定事件
+                        let update = tbody.getElementsByClassName("copy");
+                        let del = tbody.getElementsByClassName("del");
+                        let save = tbody.getElementsByClassName("save");
+
+                        // 修改： 按钮绑定事件，并且传递 用户名、密码、电话、邮箱到update_user.htmlyemina
+                        for (let val of update) {
+                            val.onclick = function () {
+                                val.style.background = "#ccc";
+                                val.parentNode.children[2].style.background = "#58bc58";
+                                val.parentNode.children[2].removeAttribute("disabled");
+
+                                let userInf = this.parentNode.parentNode.children;
+                                let str = ""
+                                for (let i = 0; i < userInf.length; i++) {
+                                    if (i == 0 || i == 1 || i == userInf.length - 1) {
+                                        userInf[i].title = "该选项不可编辑";
+                                    } else {
+                                        userInf[i].setAttribute("contentEditable", "");
+                                    }
+                                }
+                            }
+                        }
+
+                        // 删除： 按钮绑定事件，保存以后让td不可编辑，并且发送ajax请求修改到数据库中
+                        for (let val of del) {
+                            val.onclick = function () {
+                                // 获取要删除数据的id
+                                let id = val.parentNode.parentNode.children[1].innerHTML * 1;
+                                // 自定义弹窗，如果点击确定，就修改信息，如果点击取消就返回，不修改用户信息
+                                custom.style = "display: block;";
+                                mask.style = "display: block;";
+                                returnBtn.style.display = "block";
+                                cancelInfo.innerHTML = "信息一旦删除就无法恢复，您确定要删除吗？";
+                                Pos_Mid();
+                                sureBtn.onclick = function () {
+                                    // 发送ajax请求
+                                    ajax({
+                                        'type': 'post',
+                                        'url': 'api/user_del.php',
+                                        'data': {
+                                            'id': id,
+                                        },
+                                        'success': str => {
+                                            if (str == 'yes') {
+                                                location.href = "user_manage.html";
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        }
+
+                        // 保存： 按钮绑定事件，保存以后让td不可编辑，并且发送ajax请求修改到数据库中
+                        for (let val of save) {
+                            val.onclick = function () {
+
+                                this.style.background = "#ccc";
+                                this.setAttribute("disabled", "disabled");
+                                val.parentNode.children[0].style.background = "rgb(0, 150, 136)";
+
+                                let userInf = this.parentNode.parentNode.children;
+                                for (let i = 2; i < userInf.length - 1; i++) {
+                                    userInf[i].removeAttribute("contentEditable");
+                                }
+
+                                // console.log(userInf[2].innerHTML, userInf[3].innerHTML, userInf[4].innerHTML, userInf[5].innerHTML,);
+                                // 发送ajax请求
+                                ajax({
+                                    'type': 'post',
+                                    'url': 'api/user_update.php',
+                                    'data': {
+                                        'id': userInf[1].innerHTML,
+                                        'username': userInf[2].innerHTML,
+                                        'pwd': userInf[3].innerHTML,
+                                        'phone': userInf[4].innerHTML,
+                                        'email': userInf[5].innerHTML,
+                                    },
+                                    'success': str => {
+                                        if (str == 'yes') {
+                                            // alert("修改成功！");
+                                            custom.style = "display: block;";
+                                            mask.style = "display: block;";
+                                            Pos_Mid();
+                                        }
+                                    }
+                                })
+                            }
+                        }
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

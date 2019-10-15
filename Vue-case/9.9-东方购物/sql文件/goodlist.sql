@@ -1,0 +1,16 @@
+INSERT INTO `goodlist` VALUES (1, 'å°ç±³è·¯ç”±å™¨ä¸è¦è„¸', 'æ— è¢–è¿žè¡£è£™2019æ–°æ¬¾å¤é•¿è£™æ”¶è…°æ˜¾ç˜¦æ°”è´¨é›ªçººç¢ŽèŠ±ä»™', 'å¹¿ä¸œ æ·±åœ³', '300', 'images\\bigpic1.webp&images\\bigpic2.webp&images\\bigpic3.webp&images\\bigpic4.webp&images\\bigpic18.webp&images\\bigpic4.webp&images\\bigpic18.webp&images\\bigpic4.webp&images\\bigpic18.webp');
+INSERT INTO `goodlist` VALUES (2, 'nimobabyer', 'å°å¨œæ³•ä»£ MAJE 19ç§‹å†¬è¿žè¡£è£™ä¿®èº«é•¿è¢–æ˜Ÿæ˜Ÿç¢ŽèŠ±', 'åŒ—äº¬', '310', 'images\\bigpic2.webp&images\\bigpic3.webp&images\\bigpic18.webp&images\\bigpic4.webp');
+INSERT INTO `goodlist` VALUES (3, 'æŽæµ·çº­', 'è´¾cuicuiè‡ªåˆ¶æ—¥ç³»å‡é¾„ç«¥è¶£å°‘å¥³æ„Ÿåè¶³é¦™è•‰æ°´æžœå°èŠ±A', 'ä¸Šæµ·', '320', 'images\\bigpic3.webp');
+INSERT INTO `goodlist` VALUES (4, 'å°ç±³è·¯ç”±å™¨ä¸è¦è„¸', 'æ— è¢–è¿žè¡£è£™2020æ–°æ¬¾å¤é•¿è£™æ”¶è…°æ˜¾ç˜¦æ°”è´¨é›ªçººç¢ŽèŠ±ä»™', 'å¹¿ä¸œ æ·±åœ³', '330', 'images\\bigpic4.webp');
+INSERT INTO `goodlist` VALUES (5, 'nimobabyer', 'å°å¨œæ³•ä»£ MAJE 20ç§‹å†¬è¿žè¡£è£™ä¿®èº«é•¿è¢–æ˜Ÿæ˜Ÿç¢ŽèŠ±', 'åŒ—äº¬', '340', 'images\\bigpic18.webp');
+INSERT INTO `goodlist` VALUES (6, 'æŽæµ·çº­', 'è´¾cuicuiè‡ªåˆ¶æ—¥ç³»å‡é¾„ç«¥è¶£å°‘å¥³æ„Ÿåè¶³é¦™è•‰æ°´æžœå°èŠ±A', 'ä¸Šæµ·', '350', 'images\\bigpic6.webp');
+INSERT INTO `goodlist` VALUES (7, 'å°ç±³è·¯ç”±å™¨ä¸è¦è„¸', 'æ— è¢–è¿žè¡£è£™2021æ–°æ¬¾å¤é•¿è£™æ”¶è…°æ˜¾ç˜¦æ°”è´¨é›ªçººç¢ŽèŠ±ä»™', 'å¹¿ä¸œ æ·±åœ³', '360', 'images\\bigpic7.webp');
+INSERT INTO `goodlist` VALUES (8, 'nimobabyer', 'å°å¨œæ³•ä»£ MAJE 21ç§‹å†¬è¿žè¡£è£™ä¿®èº«é•¿è¢–æ˜Ÿæ˜Ÿç¢ŽèŠ±', 'åŒ—äº¬', '370', 'images\\bigpic8.webp');
+INSERT INTO `goodlist` VALUES (9, 'æŽæµ·çº­', 'è´¾cuicuiè‡ªåˆ¶æ—¥ç³»å‡é¾„ç«¥è¶£å°‘å¥³æ„Ÿåè¶³é¦™è•‰æ°´æžœå°èŠ±A', 'ä¸Šæµ·', '380', 'images\\bigpic9.jpg');
+INSERT INTO `goodlist` VALUES (10, 'å°ç±³è·¯ç”±å™¨ä¸è¦è„¸', 'æ— è¢–è¿žè¡£è£™2022æ–°æ¬¾å¤é•¿è£™æ”¶è…°æ˜¾ç˜¦æ°”è´¨é›ªçººç¢ŽèŠ±ä»™', 'å¹¿ä¸œ æ·±åœ³', '390', 'images\\bigpic10.jpg');
+INSERT INTO `goodlist` VALUES (11, 'nimobabyer', 'å°å¨œæ³•ä»£ MAJE 22ç§‹å†¬è¿žè¡£è£™ä¿®èº«é•¿è¢–æ˜Ÿæ˜Ÿç¢ŽèŠ±', 'åŒ—äº¬', '400', 'images\\bigpic11.jpg');
+INSERT INTO `goodlist` VALUES (12, 'æŽæµ·çº­', 'è´¾cuicuiè‡ªåˆ¶æ—¥ç³»å‡é¾„ç«¥è¶£å°‘å¥³æ„Ÿåè¶³é¦™è•‰æ°´æžœå°èŠ±A', 'ä¸Šæµ·', '410', 'images\\bigpic12.jpg');
+INSERT INTO `goodlist` VALUES (13, 'å°ç±³è·¯ç”±å™¨ä¸è¦è„¸', 'æ— è¢–è¿žè¡£è£™2023æ–°æ¬¾å¤é•¿è£™æ”¶è…°æ˜¾ç˜¦æ°”è´¨é›ªçººç¢ŽèŠ±ä»™', 'å¹¿ä¸œ æ·±åœ³', '420', 'images\\bigpic13.jpg');
+INSERT INTO `goodlist` VALUES (14, 'nimobabyer', 'å°å¨œæ³•ä»£ MAJE 23ç§‹å†¬è¿žè¡£è£™ä¿®èº«é•¿è¢–æ˜Ÿæ˜Ÿç¢ŽèŠ±', 'åŒ—äº¬', '430', 'images\\bigpic14.jpg');
+INSERT INTO `goodlist` VALUES (15, 'æŽæµ·çº­', 'è´¾cuicuiè‡ªåˆ¶æ—¥ç³»å‡é¾„ç«¥è¶£å°‘å¥³æ„Ÿåè¶³é¦™è•‰æ°´æžœå°èŠ±A', 'ä¸Šæµ·', '440', 'images\\bigpic15.jpg');
+INSERT INTO `goodlist` VALUES (16, 'å°ç±³è·¯ç”±å™¨ä¸è¦è„¸', 'æ— è¢–è¿žè¡£è£™2024æ–°æ¬¾å¤é•¿è£™æ”¶è…°æ˜¾ç˜¦æ°”è´¨é›ªçººç¢ŽèŠ±ä»™', 'å¹¿ä¸œ æ·±åœ³', '450', 'images\\bigpic16.jpg');

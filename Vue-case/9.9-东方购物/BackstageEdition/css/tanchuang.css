@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+.mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 50px);
+    background-color: #ABABAB;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.custom-popup {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 200px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    border-radius: 10px;
+    z-index: 2;
+    /* box-shadow: 0 0 40px 3px #ccc inset; */
+}
+
+.cancel-tit {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    color: #669df6;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #cccccc;
+    user-select: none;
+}
+
+.cancel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    /* border: 1px solid #cccccc; */
+    text-align: center;
+    line-height: 20px;
+    font-size: 26px;
+}
+
+.cancel-tit:hover {
+    cursor: pointer;
+}
+
+#info {
+    height: 120px;
+    padding-top: 50px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    color: #333333;
+}
+
+.cus-btn-box {
+    height: 40px;
+}
+
+.cancel-btn {
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    bottom: 10px;
+    color: #ffffff;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.cancel-btn:hover {
+    cursor: pointer;
+}
+
+.sure-btn {
+    right: 10px;
+    background-color: rgb(102, 157, 246);
+    border: 1px solid rgb(102, 157, 246);
+}
+
+.sure-btn:hover {
+    background-color: rgb(103, 139, 220);
+    border: 1px solid rgb(102, 157, 220);
+}
+
+.return-btn {
+    right: 90px;
+    color: blue;
+    border: 1px solid #eeeeee;
+    background: #ffffff;
+}
+
+.return-btn:hover {
+    background: #eeeeee;
+}
