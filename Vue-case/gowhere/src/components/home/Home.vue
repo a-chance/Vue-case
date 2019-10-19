@@ -2,10 +2,14 @@
     <div class="home">
         <!-- 使用局部组件 -->
         <home-header></home-header>
-        <home-swiper :swiperList='swiperList'></home-swiper>
-        <home-nav :imgList="iconList"></home-nav>
-        <home-favorite></home-favorite>
-        <home-weekend :weekendList="weekendList"></home-weekend>
+        <div ref="wrapper" class="container">
+            <div>
+                <home-swiper :swiperList='swiperList'></home-swiper>
+                <home-nav :imgList="iconList"></home-nav>
+                <home-favorite></home-favorite>
+                <home-weekend :weekendList="weekendList"></home-weekend>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -16,6 +20,9 @@ import HomeSwiper from './base/Swiper'
 import HomeNav from './base/Nav'
 import HomeFavorite from './base/Favorite'
 import HomeWeekend from './base/Weekend'
+
+// 引入滚动回弹插件
+import BScroll from 'better-scroll'
 
 // 导入请求数据的函数
 import {getHome} from '@/api'
@@ -53,13 +60,33 @@ export default {
             this.weekendList = weekendList
         }
     },
-    created(){
+    // created(){
+    //     // console.log('created 触发了')
+    //     this.getData()
+    // },
+    mounted(){
+        // console.log('mounted 触发了')
+        this.scroll = new BScroll(this.$refs.wrapper, {
+            click: true,
+            bounceTime: 300
+        })
+    },
+    activated(){ // 页面展示时触发
+        // console.log('home 激活了')
         this.getData()
     },
+    deactivated(){ // 页面没有展示时触发
+        // console.log('home 失活了')
+    }
 }
 </script>
 
 <style lang='stylus' scoped>
-    .home
-        height 1000rem
+    .container
+        position fixed
+        overflow hidden
+        top .88rem
+        left 0
+        right 0
+        bottom 0 
 </style>
