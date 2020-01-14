@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+
+    <!--<input type="text" v-model.number.lazy="a">-->
+
+    <!--<input type="text" v-model="a">-->
+    <!--<input type="radio" v-model="b" value="女">女-->
+    <!--<input type="radio" v-model="b" value="男">男-->
+    <!--<input type="checkbox" v-model.number="arr" value="1">刘备-->
+    <!--<input type="checkbox" v-model.number="arr" value="2">关羽-->
+    <!--<input type="checkbox" v-model.number="arr" value="3">张飞-->
+    <!--<select v-model="d" multiple>-->
+        <!--<option value="刘备">刘备</option>-->
+        <!--<option value="关羽">关羽</option>-->
+        <!--<option value="张飞">张飞</option>-->
+    <!--</select>-->
+
+    <textarea v-model="f"></textarea>
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                // a:1,
+                // b:'男',
+                // arr:[],
+                c:'关羽',
+                d:[],
+                f:''
+            }
+        })
+
+        /*
+        *   表单修饰符
+        *   .number
+        *       1.限制用户输入的数据必须是数字
+        *       2.把用户输入的数据转成数字类型
+        *    .lazy  当文本框失去焦点时   数据响应视图的变化
+        *
+        *    .trim   对视图中的数据进行处理  再响应到vue中
+        *
+        *
+        *
+        *    v-model的作用 ：收集表单中的数据
+        *       单选按钮  收集的是value值
+        *       多选按钮  收集的是value值  数据收集在数组中
+        *       下拉框    收集的是value值
+        *                 两种情况  可以收集单个选中的下拉框  数据存在字符串中
+        *                          可以收集多个选中的下拉框  数据存在数组中
+        *
+        *       文本域和普通的表单元素  都是收集在字符串中
+        *
+        *
+        *
+        *
+        *
+        * */
+
+    </script>
+</body>
+</html>

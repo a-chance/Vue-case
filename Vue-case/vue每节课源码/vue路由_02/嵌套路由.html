@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        #app {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            border: solid;
+            margin: 50px auto;
+        }
+
+        #app .navlist {
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+        }
+
+        #app .navlist a {
+            float: left;
+            width: 20%;
+
+            box-shadow: 0 0 10px 0 blue inset;
+
+        }
+
+        #app .about {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 60px;
+            width: 100%;
+            margin: auto;
+            height: 440px;
+            box-shadow: 0 0 10px 0 blue inset
+        }
+
+        #app .about ul {
+            float: left;
+        }
+
+        #app .about li {
+            list-style-type: none;
+            width: 162px;
+            height: 40px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px 0 blue inset;
+        }
+
+        #app .about .heaven {
+            float: right;
+            width: 600px;
+            height: 400px;
+            box-shadow: 0 0 10px 0 blue inset
+        }
+        /*.router-link-active{*/
+            /*background-color:rgba(0,0,0,.5)*/
+        /*}*/
+
+        .active{
+            background: rgba(0,0,0,.5);
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <router-link :to="{path:'/home'}">首页</router-link>
+    <router-link :to="{path:'/user'}">用户中心</router-link>
+    <router-link :to="{path:'/about'}" exact>关于我们</router-link>
+    <router-link :to="{path:'/login'}">登录</router-link>
+    <router-link :to="{path:'/register'}">注册</router-link>
+
+    <router-view></router-view>
+</div>
+
+<template id="about">
+    <div class="about">
+        <ul>
+            <li><router-link to="/about/concat">联系我们</router-link></li>
+            <li><router-link to="/about/partner">合作伙伴</router-link></li>
+            <li><router-link to="/about/address">公司地址</router-link></li>
+        </ul>
+        <router-view class="heaven"></router-view>
+    </div>
+
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src='https://unpkg.com/vue-router/dist/vue-router.js'></script>
+
+<script>
+    /*
+    *   vur-router做的是单页面要用  single page application SPA
+    * */
+
+    let home = {
+        data(){
+            return {
+                a:'home组件'
+            }
+        },
+        template:'<div>首页</div>',
+        created(){
+            document.title = this.$route.meta.title
+           // console.log('首页 created')
+        }
+    }
+
+    let user = {
+        template:'<div>用户中心</div>',
+        created(){
+            document.title = this.$route.meta.title
+            // console.log('用户中心 created')
+        }
+    }
+    let about = {
+        template:'#about'
+    }
+    let login = {
+        template:'<div>登录</div>'
+    }
+    let register = {
+        template:'<div>注册</div>'
+    }
+
+    let concat = {
+        template:'<div>110</div>'
+    }
+    let partner = {
+        template:'<div>阿里云大学</div>'
+    }
+
+    let address1 = {
+        template:'<div>湖南省长沙市岳麓区</div>'
+    }
+    // 路由和组件的映射表
+    let routes = [
+,        {
+            path:'/home',
+            component:home,
+            meta:{
+                title:'首页'
+            }
+        },
+        {
+            path:'/user',
+            component:user,
+            meta:{
+                title:'用户中心'
+            }},
+        {
+            path:'/about',
+            component:about,
+            children:[  //配置子路由
+                {path:'concat',component:concat},
+                {path:'partner',component:partner},
+                {path:'address',component:address1}
+            ]
+        },
+        {path:'/login',component:login},
+        {path:'/register',component:register}
+    ]
+
+    //实例化路由对象
+    let router = new VueRouter({
+        routes,
+        linkExactActiveClass:'active'
+    })
+
+    let vm = new Vue({
+        el:'#app',
+        router
+    })
+</script>
+</body>
+</html>

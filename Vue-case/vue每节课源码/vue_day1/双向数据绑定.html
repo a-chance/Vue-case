@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <input type="text" id="input">
+    <script>
+        let data = {};
+        let temp = {};
+
+        Object.defineProperty(data,'a',{
+            //enumerable:false,    //定义属性能否被遍历  默认false  不可遍历
+            //configurable:false,  //定义属性能否被删除  默认false 不可删除
+            // writable:false,        //定义属性能否被设置  默认false  不可重写
+            // value:'海文'
+            get() {              //获取data的a属性时会触发的函数
+                return temp.a
+            },
+            set(value){           //  设置data的a属性时会触发的函数
+                temp.a = value;
+                input.value = value;
+            }
+        })
+
+        //在文本框中输入数据  就会触发回调函数
+        input.addEventListener('input',function(){
+            data.a = this.value;
+        })
+
+
+    </script>
+</body>
+</html>

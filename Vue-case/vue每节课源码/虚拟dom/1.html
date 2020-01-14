@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+    啦啦啦
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            text:"我是文本"
+        },
+        render:function(createElement){
+            console.log('createElement');
+            //  ['div',{class:'heaven'},'测试内容']
+            return createElement('div',{
+                class:'heaven'
+            },'测试内容')
+        },
+        //template:'<p>{{this.text}}</p>',
+
+        // <div class='heaven'>测试内容</div>
+    })
+
+
+    /*
+    <div class='heaven'>
+        <p class='text'>我是内容</p>
+        <span>我是span</span>
+    </div>
+
+    ['div',{class:'heaven'},[
+        ['p',{class:'text'},我是内容],
+        ['span',{},我是span]
+    ]]
+
+    ['div',{class:'heaven'},[
+        ['p',{class:'text'},我是改变的文本],
+        ['span',{},我是span]
+    ]]
+
+        createElement函数的作用是生成虚拟dom
+    *   render函数的作用是把  虚拟dom变成真实dom
+    *   1.  初始化vue的数据
+    *   2.  选择模板：  render > template > outerHTML
+    *   3.  createElement 生成 虚拟dom ['div',{class:'heaven'},'测试内容']
+    *   4.  render 生成  真实dom <div class='heaven'>测试内容</div>
+    *   5.  把生成的真实dom挂载到挂载点上
+    *   6.  watcher 监视器 监听到数据更新
+    *   7.  createElement 生成新的虚拟dom  ['div',{class:'heaven'},'更改后的文字']
+    *   8.  比对两个不同的虚拟dom  diff算法  找出差异
+    *   9.  操作真实dom 更新有差异的部分 document.getElementsByClassName('heaven')[0].innerText = 更改后的文字
+
+    *     diff算法是同级比较的  diff算法也是可以极大的提升性能的
+    *       1.如果观察到同一级的虚拟dom发生改变  则后面的虚拟dom就不再比较了
+    *        直接把最新的虚拟dom通过render函数生成真实dom 挂载到挂载点
+    *       2.如果观察到同级的虚拟dom没有发生改变 则继续向下一级比较
+    *       直至找到变化的虚拟dom为止 如果最终找不到变化的虚拟dom, 则视图不会更新
+    * */
+</script>
+</body>
+</html>

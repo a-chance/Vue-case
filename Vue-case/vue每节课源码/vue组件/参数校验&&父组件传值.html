@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+    <son :a="msg"></son>
+</div>
+
+<template id="son">
+    <div>我是子组件，父组件传递的数据是a:{{a}},b:{{b}}</div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+
+    /*
+    *   使用组件的步骤
+    *       1.定义组件
+    *       2.注册组件
+    *       3.使用组件
+    *
+    *   子组件中props这个选项  专门用来存放接受父组件数据的变量
+    *
+    *   子组件的data选项必须是一个函数  数据存放在返回的对象中
+    *
+    *   props这个选项可以是一个数组  数组表示对变量不做校验
+    *    props这个选项可以是一个对象  对象表示对变量做校验
+    *
+    *
+    * */
+    let son = {
+        // props:['a'],
+        props:{
+            a:{ //校验变量a
+                // type:String
+                // required:true
+                // default:'3',
+                validator(value){
+                    console.log('校验开始')
+                    return value>1
+                }
+            }
+        },
+        beforeCreate(){
+            console.log('子组件 beforeCreate')
+        },
+        created(){
+            console.log('子组件 created')
+        },
+        template:'#son',
+        data(){
+            return {
+                b:3
+            }
+        },
+    }
+
+
+    let vm = new Vue({
+        el:'#app',
+        data: {
+            msg: 0
+        },
+        components:{
+            son,
+        }
+    })
+</script>
+</body>
+</html>

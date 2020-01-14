@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+    <son @xxx="change"></son>
+</div>
+
+
+<template id="son">
+    <div @click="fn">我是子组件</div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script>
+
+
+    let son = {
+        data(){
+            return {
+                msg:'我是子组件的数据'
+            }
+        },
+        template:'#son',
+        methods:{
+            fn(){   //把子组件的数据给父组件
+                //$emit 向父组件发射一个事件  发射事件之后 父组件可以立马监控到
+                this.$emit('xxx',this.msg)
+            }
+        }
+    }
+
+
+    let vm = new Vue({
+        el:'#app',
+        components:{
+            son
+        },
+        methods:{
+            change(value){
+                console.log(value)
+                console.log('子组件发射的xxx事件  我检测到了')
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插槽</title>
+</head>
+<body>
+<div id="app">
+    <son>
+        <!--<h2 slot="header">标题1</h2>-->
+        <!--<h2 slot="header">标题2</h2>-->
+        <!--<h2 slot="header">标题1</h2>-->
+        <!--<h2 slot="header">标题2</h2>-->
+        <template slot="header">
+            <h2>标题1</h2>
+            <h2>标题2</h2>
+            <h2>标题1</h2>
+            <h2>标题2</h2>
+        </template>
+        <p slot="footer">页脚</p>
+    </son>
+</div>
+
+<template id="son">
+    <div>
+        <slot name="header">默认标题</slot>
+        我是子组件的数据
+        <slot name="footer"></slot>
+    </div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    let son = {
+        template:'#son',
+    }
+    let vm = new Vue({
+        el:'#app',
+        components:{
+            son
+        }
+    })
+
+    /*
+    *   slot  可以让组件更加灵活
+    *   slot插槽  默认是没有名字的  可以给slot加上name属性
+    *
+    *   slot也可以设置默认值
+    *
+    *   一个槽可以被插入多个内容 ，多个内容可以全都放在template中，只要给template命名即可
+    *
+    *
+    *
+    * */
+</script>
+</body>
+</html>

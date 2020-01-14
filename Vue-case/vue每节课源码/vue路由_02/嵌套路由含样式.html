@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0
+      }
+
+      #app {
+         position: relative;
+         width: 800px;
+         height: 500px;
+         border: solid;
+         margin: 50px auto;
+      }
+
+      #app .navlist {
+         overflow: hidden;
+      }
+
+      a {
+         text-decoration: none;
+         line-height: 40px;
+         height: 40px;
+         text-align: center;
+      }
+
+      #app .navlist a {
+         float: left;
+         width: 20%;
+
+         box-shadow: 0 0 10px 0 blue inset;
+
+      }
+
+      #app .about {
+         position: absolute;
+         left: 0;
+         right: 0;
+         top: 60px;
+         width: 100%;
+         margin: auto;
+         height: 440px;
+         box-shadow: 0 0 10px 0 blue inset
+      }
+
+      #app .about ul {
+         float: left;
+      }
+
+      #app .about li {
+         list-style-type: none;
+         width: 162px;
+         height: 40px;
+         margin: 20px 0;
+         box-shadow: 0 0 10px 0 blue inset;
+      }
+
+      #app .about .heaven {
+         float: right;
+         width: 600px;
+         height: 400px;
+         box-shadow: 0 0 10px 0 blue inset
+      }
+      .router-link-active{
+         background-color:rgba(0,0,0,.5)
+      }
+   </style>
+</head>
+
+<body>
+   <div id="app">
+      <navlist></navlist>
+      <router-view></router-view>
+   </div>
+
+   <template id='navlist'>
+      <div class='navlist'>
+         <router-link :to="{name:'homelink'}">首页</router-link>
+         <router-link :to="{name:'userlink'}">用户中心</router-link>
+         <router-link :to="{name:'aboutlink'}">关于我们</router-link>
+         <router-link :to="{name:'loginlink'}">登录</router-link>
+         <router-link :to="{name:'registerlink'}">注册</router-link>
+      </div>
+   </template>
+
+   <template id='about'>
+      <div class='about'>
+         <ul>
+            <li>
+               <router-link :to="{name:'concatlink'}" >联系我们</router-link>
+            </li>
+            <li>
+               <router-link to="/about/parnter">合作伙伴</router-link>
+            </li>
+            <li>
+               <router-link to="/about/address1">公司地址</router-link>
+            </li>
+         </ul>
+         <router-view class='heaven'></router-view>
+      </div>
+   </template>
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script src='https://unpkg.com/vue-router/dist/vue-router.js'></script>
+
+   <script>
+
+      let navlist = {
+         template: '#navlist'
+      }
+      let home = {
+         template: '<div>首页</div>',
+         created() {
+             console.log('home  created');
+            document.title = this.$route.meta.title
+         },
+      }
+      let user = {
+         template: '<div>用户中心</div>',
+         created() {
+            document.title = this.$route.meta.title
+         },
+      }
+
+      let concat = {
+         template: '<div>15755362313</div>'
+      }
+      let address1 = {
+         template: '<div>湖南长沙市岳麓区</div>'
+      }
+      let parnter = {
+         template: '<div>阿里云大学</div>'
+      }
+
+
+      let about = {
+         template: '#about'
+      }
+      let login = {
+         template: '<div>登录</div>'
+      }
+      let register = {
+         template: '<div>注册</div>'
+      }
+      let routes = [
+         {
+            path: '/home',
+            name: 'homelink',
+            component: home,
+            meta:{
+               title:'首页'
+            }
+         },
+         {
+            path: '/user',
+            name: 'userlink',
+            component: user,
+            meta:{
+               title:'用户中心'
+            }
+         },
+         {
+            path: '/about',
+            name: 'aboutlink',
+            component: about,
+            // redirect:'/about/concat',
+            children: [
+               { path: 'concat', name: 'concatlink', component: concat },
+               { path: 'parnter', name: 'parntertlink', component: parnter },
+               { path: 'address1', name: 'addresslink', component: address1 },
+            ]
+         },
+         {
+            path: '/login',
+            name: 'loginlink',
+            component: login
+         },
+         {
+            path: '/register',
+            name: 'registerlink',
+            component: register
+         },
+         {path:'*',redirect:'/home'}
+      ]
+
+      let router = new VueRouter({
+         routes,
+      })
+
+      let vm = new Vue({
+         el: '#app',
+         router,
+         components: {
+            navlist
+         }
+      })
+
+      /*
+         声明式导航传参
+         跳转地址时  query:{page:1}
+      */
+   </script>
+</body>
+
+</html>

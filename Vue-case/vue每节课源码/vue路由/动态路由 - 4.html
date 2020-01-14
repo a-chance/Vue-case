@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!--<router-link :to="{path:'/home',params:{id:1}}" tag="button">首页</router-link>-->
+    <router-link :to="{name:'homelink',params:{id:1}}" tag="button">首页</router-link>
+    <router-view></router-view>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<script>
+    let home = {
+        template:'<div>首页</div>',
+        created(){
+            console.log(this.$route.query)
+        }
+    }
+
+    let routes = [  //路由和组件的映射表
+        {path:'/home/:id',name:'homelink',component:home},
+    ];
+
+    //实例化路由对象
+    let router = new VueRouter({
+        routes
+    })
+
+    let vm = new Vue({
+        el:'#app',
+        router
+    })
+    /*
+    *       router-link 组件的属性
+    *           tag  改变组件在页面中的种类
+    *
+    *           to  指定跳转的地址
+    *
+    * */
+
+</script>
+
+
+</body>
+</html>

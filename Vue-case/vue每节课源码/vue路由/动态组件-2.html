@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="radio" v-model="radio" value="home">首页
+    <input type="radio" v-model="radio" value="user">用户中心
+    <keep-alive>
+        <component :is="radio"></component>
+    </keep-alive>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    //局部组件
+    let home = {
+        template:'<div>首页</div>',
+        created(){
+            alert('home created')
+        },
+        destroyed(){
+            alert('home destroy')
+        }
+    }
+    let user = {
+        template:'<div>用户中心</div>',
+        created(){
+            alert('user created')
+        },
+        destroyed(){
+            alert('user destroy')
+        }
+    }
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            radio:'home'
+        },
+        components:{
+            home,
+            user
+        }
+
+    })
+
+
+
+    /*
+    *   component 动态组件   is属性必须
+    *
+    *   keep-alive  可以保证内部的组件不被销毁
+    * */
+
+
+</script>
+
+
+</body>
+</html>

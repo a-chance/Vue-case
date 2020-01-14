@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <button @click="goHome">首页</button>
+    <button @click="goUser">用户中心</button>
+    <button @click="goBack">返回上一页</button>
+    <router-view></router-view>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<script>
+
+    let home = {
+        template:'<div>首页</div>',
+        // created(){
+        //     console.log(this.$route.query)
+        // }
+    }
+    let user = {
+        template:'<div>用户中心</div>'
+    }
+
+    let routes = [  //路由和组件的映射表
+        {path:'/home',name:'homelink',component:home},
+        {path:'/user/:id',name:'userlink',component:user},
+        //redirect  重定向
+        {path:'*',redirect:'/home'}
+    ];
+
+    //实例化路由对象
+    let router = new VueRouter({
+        routes
+    })
+
+    let vm = new Vue({
+        el:'#app',
+        router,
+        methods:{
+            goHome(){
+                this.$router.push({
+                    path:'/home',
+                    query:{a:1}
+                })
+            },
+            goBack(){
+                // this.$router.back()
+                this.$router.go(-1)
+            },
+            goUser(){
+                this.$router.push({
+                    // path:'/user',
+                    name:'userlink',
+                    params:{
+                        id:2
+                    }
+                })
+            }
+        }
+    })
+    /*
+    *       router-link 组件的属性
+    *           tag  改变组件在页面中的种类
+    *
+    *           to  指定跳转的地址
+    *
+    * */
+
+</script>
+
+
+</body>
+</html>

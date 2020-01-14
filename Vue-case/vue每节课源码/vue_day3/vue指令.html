@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            background: pink;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!--<p @click="fn">{{text}}</p>-->
+
+    <!--<div @click="parent">-->
+        <!--parent-->
+        <!--<div @click.self="son">-->
+            <!--son-->
+            <!--<div @click="grandson">-->
+                <!--grandson-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    p
+
+    <a href="http://www.baidu.com" @click.prevent>百度</a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            text:'我是一波段落'
+        },
+        methods:{
+            fn(e){
+                console.log(e);
+
+            },
+            parent(){
+                alert('parent');
+            },
+            son(){
+                alert('son');
+            },
+            grandson(){
+                alert('grandson');
+            }
+        }
+    })
+
+    /*
+    *       @click=fn  和  @click=fn()   的区别
+    *
+    *       后者必须要手动传入$event  才能在回调函数中使用事件对象
+    *
+    *       事件修饰符
+    *           .once   为元素绑定一次性事件
+    *           .stop   阻止事件冒泡
+    *
+    *           .capture  为元素绑定一个事件捕获阶段触发的回调函数
+    *           .self  为元素绑定一个只在自身元素上触发的事件
+    *           .prevent  阻止元素的默认行为
+    *
+    *
+    * */
+
+</script>
+</body>
+</html>

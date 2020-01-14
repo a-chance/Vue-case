@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div id="app">
+        <!--<input type="text" v-model="a">-->
+        {{obj}}
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+<script>
+
+
+    let vm = new Vue({
+        el:'#app',      //根节点
+        data:{          //vue可以操作的数据集合
+            a:1,
+            b:2,
+            // arr:[1,2,3],
+            obj:{
+                name:'heaven',
+                age:28,
+            }
+        }
+    })
+
+    //vm.obj.sex = '女'
+    //给对象添加响应式属性
+    //vm.$set(对象，属性，初始值)
+    vm.$set(vm.obj,'sex','女');
+
+    //如果要使视图中的数组发生改变  需要使用数组的变异方法
+    //  push pop  shift unshift  splice sort reverse
+    //获取data选项中的a   可以通过  vm.a 或者vm.$data.a
+    //  特例  vue不能检测数组的length  对象属性的增加和删除
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+npm install vue-cli -g   全局安装vue-cli
+vue init webpack  项目名   使用webpack构建自己的项目
+
+Project name    	按enter键
+Project description	按enter键
+Author  		按enter键
+Vue build		按enter键
+Install vue-router      是否安装Vue-router 视自己的项目情况而定 一般都是需要的  按enter键
+Use ESlint to lint your code   		选择NO  不需要按照严格的代码书写规范
+Set up unit tests 	       		选择NO  不需要单元测试
+Setup e2e tests with Nightwatch 	选择NO   不需要e2e测试
+Should we run 'npm install' for you ......  选择npm  
+
+
+修改config/index.js的proxyTable可以配置跨域
+修改config/index.js中的17行可以自定义服务启动的端口
+
+
+
+axios地址  https://github.com/axios/axios
+所有新闻数据接口 
+http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20
+每条新闻的详细信息
+http://www.phonegap100.com/appapi.php?a=getPortalArticle&aid=文章id
+
+
+豆瓣数据接口
+
+https://api.douban.com/v2/movie/top250?count=20&&start=20

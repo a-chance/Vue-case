@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="app">
+
+    <router-link :to="{path:'/home'}">首页</router-link>
+    <router-link :to="{path:'/user'}">用户中心</router-link>
+    <router-view></router-view>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src='https://unpkg.com/vue-router/dist/vue-router.js'></script>
+
+<script>
+
+    let home =  {
+        template:'<div>首页</div>',
+        beforeRouteEnter(to,from,next){   // 组件独享函数  3
+            //console.log('beforeRouteEnter')
+
+            // console.log(this)
+            next( heaven=>{
+                console.log(heaven)
+            });
+
+
+            // debugger
+        },
+        beforeCreate(){
+            console.log('beforeCreate')
+        }
+
+    }
+    let user =  {
+        template:'<div>用户中心</div>'
+    }
+
+    let routes = [
+        {
+            path:'/home',
+            component:home,
+            beforeEnter(to,from,next){  //路由独享函数  2
+                //console.log('beforeEnter')
+                // debugger
+                next()
+            }
+        },
+        {
+            path: '/user',
+            component: user,
+        }
+    ]
+    let router = new VueRouter({
+        routes,
+    })
+
+    //全局前置守卫   1
+    router.beforeEach((to,from,next)=>{
+        //console.log('beforeEach')
+        next(); //放行
+        // next(false)
+        // debugger
+
+    })
+
+    //全局解析守卫    4
+    router.beforeResolve((to,from,next)=>{
+        //console.log('beforeResolve')
+        // debugger
+        next();
+
+    })
+
+
+    //全局后置守卫    5
+    router.afterEach((to,from)=>{
+        // debugger
+        //console.log('afterEach')
+    })
+
+    let vm = new Vue({
+        el:'#app',
+        router
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue组件</title>
+</head>
+<body>
+
+<div id="app">
+    <son></son>
+</div>
+
+<template id="son">
+    <div>
+        <p>海文</p>
+        <p>海文</p>
+        <p>海文</p>
+        <p>海文</p>
+    </div>
+</template>
+
+<!--<script type="text/x-template" id="son">-->
+    <!--<div>-->
+        <!--<p>海文</p>-->
+        <!--<p>海文</p>-->
+        <!--<p>海文</p>-->
+        <!--<p>海文</p>-->
+    <!--</div>-->
+<!--</script>-->
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    //定义子组件
+    let son = {
+        template:'#son',
+        created(){
+            console.log(' 子组件 created ')
+        },
+        beforeMount(){
+            console.log(' 子组件 beforeMount ')
+        },
+        mounted(){
+            console.log(' 子组件 mounted ')
+        },
+    }
+
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            a:1
+        },
+        created(){
+            console.log(' 根组件 created ')
+        },
+        beforeMount(){
+            console.log(' 根组件 beforeMount ')
+        },
+        mounted(){
+            console.log(' 根组件 mounted ')
+        },
+        //注册组件
+        components:{
+            son
+        }
+    })
+</script>
+</body>
+</html>

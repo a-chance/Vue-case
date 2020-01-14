@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+   <router-link :to="{name:'articlelink',params:{page:1}}">文章1</router-link>
+    <router-link :to="{name:'articlelink',params:{page:2}}">文章2</router-link>
+    <router-link :to="{name:'articlelink',params:{page:3}}">文章3</router-link>
+
+    <router-view :key="Math.random()"></router-view>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<script>
+
+    let article = {
+        template:'<div>我是第{{$route.params.page}}篇文章</div>',
+        created(){
+            alert('获取第'+this.$route.params.page+'的数据');
+        },
+        // watch:{
+        //     $route(){
+        //         alert('获取第'+this.$route.params.page+'的数据');
+        //     }
+        // }
+    }
+
+    let routes = [  //路由和组件的映射表
+        {path:'/article/:page',name:'articlelink',component:article},
+    ];
+
+    //实例化路由对象
+    let router = new VueRouter({
+        routes
+    })
+
+    let vm = new Vue({
+        el:'#app',
+        router,
+    })
+    /*
+    *       router-link 组件的属性
+    *           tag  改变组件在页面中的种类
+    *
+    *           to  指定跳转的地址
+    *
+    * */
+
+</script>
+
+
+</body>
+</html>

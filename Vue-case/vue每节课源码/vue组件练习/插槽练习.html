@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #app{
+            width:1200px;
+            margin:auto;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <panel v-for="(article,index) in articles" :key="index" :type="article.type">
+        <h3 slot="title">{{article.title}}</h3>
+        <p slot="content" class="panel-body">{{article.content}}</p>
+        <p slot="author" v-if="article.author">作者：{{article.author}}</p>
+    </panel>
+</div>
+
+<template id="panel">
+    <div class="panel" :class="heaven">
+        <div class="panel-heading">
+           <slot name="title"></slot>
+        </div>
+        <div class="panel-body">
+            <slot name="content"></slot>
+        </div>
+        <div class="panel-footer">
+            <slot name="author">
+                <p>作者：默认作者</p>
+            </slot>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-success" @click="fn">查看作者</button>
+        </div>
+    </div>
+
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script>
+//  success  panel-success
+    let panel = {
+        template:'#panel',
+        props:['type'],
+        methods:{
+            fn(){
+                alert(this.$el.children[2].innerText.slice(3))
+            }
+        },
+        computed:{
+            heaven(){
+                return 'panel-' + this.type
+            }
+        }
+    }
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            articles:[
+                {type:'success',title:'什么是vue',content:'vue文章',author:'heaven'},
+                {type:'warning',title:'什么是react',content:'react文章',author:'xiaoming'},
+                {type:'danger',title:'什么是js',content:'js文章'}
+            ]
+        },
+        components:{
+            panel
+        }
+    })
+</script>
+</body>
+</html>
