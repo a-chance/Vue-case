@@ -1,0 +1,250 @@
+#main {
+  width: 100%;
+}
+#main .content {
+  width: 1190px;
+  margin: 0 auto;
+}
+#main .content .cart-tit {
+  width: 1190px;
+  height: 5px;
+}
+#main .content .cart-tit .blue-line {
+  width: 100%;
+  height: 5px;
+  background: url(../img/bg.cart.blue-line.gif) repeat-x;
+}
+#main .content .list {
+  height: 39px;
+  border-bottom: 1px solid #d7dfe5;
+  background: #f7f7f7;
+  font-size: 12px;
+  line-height: 39px;
+  color: #505966;
+}
+#main .content .list span {
+  float: left;
+  text-align: center;
+}
+#main .content .list .cols1 {
+  width: 443px;
+}
+#main .content .list .cols2 {
+  width: 102px;
+}
+#main .content .list .cols3 {
+  width: 165px;
+}
+#main .content .list .cols4 {
+  width: 100px;
+}
+#main .content .list .cols5 {
+  width: 200px;
+}
+#main .content .list .cols6 {
+  width: 175px;
+}
+#main .content .list .cols7 {
+  width: 116px;
+}
+#main .content .cart-main {
+  width: 100%;
+  border-bottom: 2px solid #686868;
+}
+#main .content .cart-main .product-list .product {
+  border-left: 1px solid #ebeef0;
+  border-right: 1px solid #ebeef0;
+  border-bottom: 1px solid #ebeef0;
+  font-size: 12px;
+  color: #505966;
+  padding: 20px 0;
+}
+#main .content .cart-main .product-list .product .cols1 {
+  width: 443px;
+}
+#main .content .cart-main .product-list .product .cols1 .sele {
+  float: left;
+  display: block;
+  margin-top: 24px;
+  margin-left: 50px;
+  width: 16px;
+  height: 16px;
+}
+#main .content .cart-main .product-list .product .cols1 .pic {
+  margin-left: 18px;
+}
+#main .content .cart-main .product-list .product .cols1 .pic img {
+  width: 60px;
+  height: 60px;
+}
+#main .content .cart-main .product-list .product .cols1 .detail {
+  width: 204px;
+  height: 60px;
+  margin-left: 12px;
+}
+#main .content .cart-main .product-list .product .cols1 .detail .name em {
+  display: block;
+  float: left;
+  width: 57px;
+  height: 17px;
+  background: url(../img/bg.cart.tv-icon.png) no-repeat;
+}
+#main .content .cart-main .product-list .product .cols1 .detail .name a {
+  float: left;
+  line-height: 17px;
+}
+#main .content .cart-main .product-list .product .cols1 .detail .info {
+  margin-top: 5px;
+  color: #84878c;
+}
+#main .content .cart-main .product-list .product .cols2 {
+  width: 102px;
+}
+#main .content .cart-main .product-list .product .cols2 .jifen {
+  margin-top: 25px;
+  margin-left: 6px;
+  text-align: center;
+}
+#main .content .cart-main .product-list .product .cols2 .jifen span {
+  padding-left: 16px;
+  background: url(../img/bg.icon.2.1.gif) no-repeat;
+  line-height: 12px;
+}
+#main .content .cart-main .product-list .product .cols3 {
+  width: 165px;
+}
+#main .content .cart-main .product-list .product .cols3 .cols3-price {
+  margin-top: 25px;
+  margin-left: 6px;
+  text-align: center;
+}
+#main .content .cart-main .product-list .product .cols4 .cols4-count {
+  margin-top: 18px;
+  margin-left: 14px;
+}
+#main .content .cart-main .product-list .product .cols4 .cols4-count .num-opt {
+  float: left;
+  width: 21px;
+  height: 25px;
+  border: 1px solid #ccc;
+  background-color: #ECECEC;
+  line-height: 25px;
+  text-align: center;
+  cursor: pointer;
+}
+#main .content .cart-main .product-list .product .cols4 .cols4-count .count {
+  float: left;
+  width: 28px;
+  height: 25px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  line-height: 25px;
+  text-align: center;
+  color: #333;
+}
+#main .content .cart-main .product-list .product .cols5 {
+  width: 200px;
+}
+#main .content .cart-main .product-list .product .cols5 .cols5-total {
+  margin-top: 25px;
+  margin-left: 10px;
+  color: red;
+  text-align: center;
+}
+#main .content .cart-main .product-list .product .cols6 {
+  width: 175px;
+}
+#main .content .cart-main .product-list .product .cols6 .cols6-opt .buy {
+  display: block;
+  width: 81px;
+  height: 33px;
+  background: url(../img/bg.cart.main.png) no-repeat 0 -355px;
+  margin: 5px 0 0 50px;
+}
+#main .content .cart-main .product-list .product .cols6 .cols6-opt .del-box {
+  margin-left: 42px;
+  margin-top: 10px;
+}
+#main .content .cart-main .product-list .product .cols6 .cols6-opt .del-box span {
+  padding-left: 18px;
+  margin-right: 10px;
+  float: left;
+  cursor: pointer;
+  color: #7D8289;
+  background: url(../img/bg.cart.icons.png) no-repeat;
+}
+#main .content .cart-main .product-list .product .cols6 .cols6-opt .del-box .s1 {
+  background-position: 0 -2px;
+}
+#main .content .cart-main .product-list .product .cols6 .cols6-opt .del-box .s2 {
+  background-position: 0 -23px;
+}
+#main .content .cart-main .product-list .product .cols7 {
+  width: 116px;
+  border-left: 1px solid #ccc;
+}
+#main .content .balance-wrap {
+  margin: 10px auto 0;
+  background: #f9f9f9;
+  width: 1188px;
+  height: 68px;
+  border: 1px solid #d7dfe5;
+  border-bottom-color: #9caebb;
+  font-size: 12px;
+  font-family: Verdana, Geneva, sans-serif;
+  color: #505966;
+}
+#main .content .balance-wrap label {
+  float: left;
+  display: block;
+  height: 70px;
+  margin-left: 12px;
+  line-height: 60px;
+  font-size: 12px;
+}
+#main .content .balance-wrap label input {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  margin-top: 23px;
+  cursor: pointer;
+}
+#main .content .balance-wrap span {
+  display: block;
+  float: left;
+  height: 70px;
+  margin-left: 30px;
+  line-height: 70px;
+  cursor: pointer;
+}
+#main .content .balance-wrap .rig-box .box1 {
+  height: 70px;
+  margin-right: 30px;
+}
+#main .content .balance-wrap .rig-box .box1 .p1 {
+  height: 20px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+#main .content .balance-wrap .rig-box .box1 .p1 b {
+  color: #239cdc;
+  padding-right: 5px;
+}
+#main .content .balance-wrap .rig-box .box1 .p2 {
+  color: red;
+  font-size: 20px;
+  margin-top: 5px;
+}
+#main .content .balance-wrap .rig-box .box1 .p2 i {
+  height: 30px;
+  font-weight: normal;
+}
+#main .content .balance-wrap .rig-box .box2 {
+  position: relative;
+  height: 43px;
+  width: 151px;
+  float: right;
+  background: url(../img/bg.cart.main.png) no-repeat -212px -179px;
+  cursor: pointer;
+  margin: 14px 13px 0 0;
+}

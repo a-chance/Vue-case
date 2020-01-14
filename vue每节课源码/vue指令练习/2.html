@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>案例2</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for='(user,index) in users'>
+            {{index}}--{{user.name}}--{{user.age}}
+            <button @click="remove(index)">删除</button>
+            <button @click="change(index,{name:'heaven',age:28})">修改</button>
+        </li>
+    </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            users: [
+                {name: 'Danny', age:25},
+                {name: 'Jack', age:27},
+                {name: 'Mack', age:26},
+                {name: 'Mary', age:29}
+            ]
+        },
+        methods:{
+            remove(index){
+                this.users.splice(index,1)
+            },
+            change(index,newUser){
+                //console.log('change');
+                // this.users[index].name = newUser.name;
+                // this.users[index].age = newUser.age;
+                this.users.splice(index,1,newUser)
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

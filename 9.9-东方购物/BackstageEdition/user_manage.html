@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息管理</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/tanchuang.css">
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="css/user_manage.css">
+    <script src="js/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <div class="mask"></div>
+    <div class="custom-popup">
+        <div class="cancel-tit">
+            温馨提示：
+            <!-- <p class="cancel">×</p> -->
+        </div>
+        <div id="info">信息已修改，请点击确定继续操作！</div>
+        <div class="cus-btn-box">
+            <input type="button" value="取消" class="return-btn cancel-btn" style="display: none;">
+            <input type="button" value="确定" class="sure-btn cancel-btn">
+        </div>
+    </div>
+    <table id="tab">
+        <thead id="thead">
+            <tr>
+                <th colspan="2" class="first">
+                    <input type="checkbox" id="allSele"><label for="allSele">全选</label>
+                    <input type="checkbox" id="revSele"><label for="revSele">反选</label>
+                </th>
+                <td colspan="5" class="c-090 t-a-l pad-l30" style="font-style: italic;">
+                    温馨提示：id和账号是无法修改的！！！
+                </td>
+            </tr>
+            <tr>
+                <th>选择</th>
+                <th>id</th>
+                <th>账号</th>
+                <th>密码</th>
+                <th>手机号</th>
+                <th>邮箱</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <!-- <tr>
+                <td><input type="checkbox" class="sele"></td>
+                <td>1</td>
+                <td>张学友</td>
+                <td>46123</td>
+                <td>46123</td>
+                <td>2233157723@qq.com</td>
+                <td class="btn-box">
+                    <input type="button" value="修改" class="copy btn">
+                    <input type="button" value="删除" class="del btn">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="sele"></td>
+                <td>1</td>
+                <td>张学友</td>
+                <td>46123</td>
+                <td>46123</td>
+                <td>2233157723@qq.com</td>
+                <td class="btn-box">
+                    <input type="button" value="修改" class="copy btn">
+                    <input type="button" value="删除" class="del btn">
+                </td>
+            </tr>-->
+        </tbody>
+        
+    </table>
+    <!-- 分页 -->
+    <div class="page-wrap">
+        <!-- 分页 -->
+        <div id="demo7" class="mar-t20 pad-b20"></div>
+    </div>
+</body>
+<script src="layui/layui.js" charset="utf-8"></script>
+<script src="js/common.js"></script>
+<script src="js/tanchuang.js"></script>
+<script src="js/user_manage.js"></script>
+</html>

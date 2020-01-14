@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{a}}
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+<script>
+
+    let vm = new  Vue({
+        el:'#app',
+        // beforeCreate(){
+        //     console.log(this);
+        //     debugger;
+        // },
+        // created(){       //使用ajax请求数据
+        //     debugger;
+        // },
+        // beforeMount(){
+        //     debugger
+        // },
+        mounted(){       //可以操作节点
+            // console.log(this.$el);
+            // this.$nextTick(()=>{        //在下一个进程执行回调函数
+            //     console.log(vm);
+            // })
+            this.$nextTick(function(){        //在下一个进程执行回调函数
+                console.log(vm);
+            })
+            //console.log(arguments);
+           // debugger
+        },
+        // beforeUpdate(){
+        //     console.log('beforeUpdate');
+        // },
+        // updated(){
+        //     console.log('updated');
+        // },
+        // beforeDestroy(){
+        //     console.log('beforeDestroy');
+        // },
+        // destroyed(){
+        //     console.log('destroyed');
+        // },
+        data:{
+            a:1,
+            b:2
+        },
+    })
+
+
+    //console.log(vm)
+
+    /*
+    *   beforeCreate  此时vue实例的状态  data中没有数据
+    *
+    *   created       此时vue实例的状态
+    *           data已经有数据了  但是数据没有挂载到视图中
+    *           数据没有挂载在根节点
+    *
+    *   beforeMount
+    *       此时根节点已经存在  但是数据还没有挂载到根节点
+    *
+    *   mounted
+    *       此时数据已经挂载到根节点上了
+    *
+    *   beforeUpdate  在数据改变之前触发
+    *   updated       在数据改变之后触发
+    *   如果要在某个生命周期函数中使用  最终的vm实例
+    *   则this.nextTick(回调)  在回调函数中是可以访问到 最终的vm实例
+    *
+    *  vm.$data  获取数据
+    *  vm.$el    获取根节点
+    *  vm.$set(对象，属性，值)
+    *  vm.$mount(el)
+    *  vm.$destroy
+    * */
+
+</script>
+</body>
+</html>
